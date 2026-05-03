@@ -1,0 +1,899 @@
+\documentclass[12pt,a4paper]{report}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[hidelinks]{hyperref}
+\usepackage{bookmark}
+\usepackage{times}
+\usepackage{setspace}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{tocloft}
+\usepackage{emptypage}
+
+\geometry{top=1in,bottom=1in,left=1.25in,right=1.0in}
+\graphicspath{{figures/}}
+\setlength{\parindent}{0.5in}
+\setlength{\parskip}{0pt}
+\doublespacing
+\setlength{\emergencystretch}{3em}
+\sloppy
+\hbadness=10000
+\hfuzz=10pt
+
+\titleformat{\chapter}[display]
+{\normalfont\huge\bfseries}
+{\chaptertitlename\ \thechapter}
+{20pt}
+{\Large\bfseries}
+\titlespacing*{\chapter}{0pt}{50pt}{40pt}
+
+\titleformat{\section}
+{\normalfont\large\bfseries}
+{\thesection}
+{1em}
+{}
+\titlespacing*{\section}{0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+
+\titleformat{\subsection}
+{\normalfont\normalsize\bfseries}
+{\thesubsection}
+{1em}
+{}
+
+\fancypagestyle{plain}{%
+	\fancyhf{}
+	\fancyfoot[R]{\thepage}
+	\renewcommand{\headrulewidth}{0pt}
+}
+\pagestyle{plain}
+
+\renewcommand{\cfttoctitlefont}{\hfil\Large\bfseries}
+\renewcommand{\cftaftertoctitle}{\hfil}
+\renewcommand{\cftloftitlefont}{\hfil\Large\bfseries}
+\renewcommand{\cftafterloftitle}{\hfil}
+\renewcommand{\cftlottitlefont}{\hfil\Large\bfseries}
+\renewcommand{\cftafterlottitle}{\hfil}
+
+\newcommand{\ProjectTitle}{Analyzing and Predicting Fault Trends in Surveillance Aircraft}
+\newcommand{\StudentName}{Muqaddas Mashal}
+\newcommand{\StudentID}{22I-2822}
+\newcommand{\SupervisorName}{Dr. Atif Aftab Ahmed Jilani}
+\newcommand{\DegreeProgram}{Masters of Artificial Intelligence (Computer Science)}
+\newcommand{\UniversityName}{National University of Computer \& Emerging Sciences}
+\newcommand{\DepartmentName}{Department of Artificial Intelligence and Data Science}
+\newcommand{\CampusName}{Islamabad, Pakistan}
+\newcommand{\ReportDate}{April 2026}
+
+\newcommand{\signatureline}[1]{%
+	\vspace{2cm}
+	\begin{flushright}
+		\noindent\makebox[2.5in]{\hrulefill}\\[0.3em]
+		\noindent #1\\[1.5em]
+		\noindent Date: \makebox[2.0in]{\hrulefill}
+	\end{flushright}
+}
+
+\newcommand{\insertfigure}[4][0.9\textwidth]{%
+	\begin{figure}[htbp]
+		\centering
+		\IfFileExists{figures/#2}{%
+			\includegraphics[width=#1]{figures/#2}%
+		}{%
+			\IfFileExists{#2}{%
+				\includegraphics[width=#1]{#2}%
+			}{%
+				\fbox{\begin{minipage}[c][2.2in][c]{#1}\centering\textbf{Figure placeholder}\\[0.4em]\small Add image file: \texttt{\detokenize{#2}}\end{minipage}}%
+			}%
+		}
+		\caption{#3}
+		\label{#4}
+	\end{figure}
+}
+
+\newcommand{\chapterquote}[1]{%
+	\begin{flushright}
+		\itshape #1
+	\end{flushright}
+}
+
+\begin{document}
+	
+	\hypersetup{pageanchor=false}
+	\begin{titlepage}
+		\newgeometry{top=1in,bottom=1in,left=1.25in,right=1.0in}
+		\thispagestyle{empty}
+		\centering
+		\begin{spacing}{1.0}
+			\vspace*{0.6cm}
+			
+			{\LARGE\bfseries Analyzing and Predicting Fault Trends\\in Surveillance Aircraft\par}
+			\vspace{1.0cm}
+			
+			{\large Submitted by\par}
+			\vspace{0.35cm}
+			{\Large\bfseries \StudentName\par}
+			\vspace{0.15cm}
+			{\large\bfseries \StudentID\par}
+			\vspace{0.9cm}
+			
+			{\large Supervised by\par}
+			\vspace{0.6cm}
+			{\LARGE\bfseries \SupervisorName\par}
+			\vspace{0.6cm}
+			
+			{\normalsize \DegreeProgram\par}
+			\vspace{0.75cm}
+			
+			{\normalsize A thesis submitted in partial fulfillment of the requirements for the degree of\par}
+			\vspace{0.1cm}
+			{\normalsize \DegreeProgram\par}
+			\vspace{0.1cm}
+			{\normalsize at \UniversityName\par}
+			\vspace{0.9cm}
+			
+			\IfFileExists{figures/fast_nuces_logo.png}{%
+				\includegraphics[width=0.16\textwidth]{figures/fast_nuces_logo.png}\par%
+			}{%
+				\fbox{\begin{minipage}[c][0.9in][c]{0.16\textwidth}\centering\small University logo\end{minipage}}\par%
+			}
+			
+			\vspace{0.7cm}
+			{\Large \DepartmentName\par}
+			\vspace{0.15cm}
+			{\Large \UniversityName\par}
+			\vspace{0.25cm}
+			{\large \CampusName.\par}
+			\vspace{0.9cm}
+			{\large\bfseries \ReportDate\par}
+		\end{spacing}
+		
+		\restoregeometry
+	\end{titlepage}
+	
+	\hypersetup{pageanchor=true}
+	\pagenumbering{roman}
+	\setcounter{page}{2}
+	
+	\chapter*{Plagiarism Undertaking}
+	\phantomsection
+	\addcontentsline{toc}{chapter}{Plagiarism Undertaking}
+	
+	I take full responsibility for the research work reported in this document titled \emph{\ProjectTitle}. I solemnly declare that the work presented in this thesis is based on my own research activity carried out under the guidance of my supervisor. Wherever technical guidance, discussion, or support has been taken, it has been acknowledged properly. I further declare that this thesis has been written in my own words and that all external material used in the document has been referenced appropriately.
+	
+	I understand that \UniversityName\ maintains a zero-tolerance policy toward plagiarism. Therefore, I state that this thesis does not contain plagiarized material and that any ideas, methods, text, or findings drawn from other sources have been cited accurately and responsibly. I also understand that if any violation is found, the University may take disciplinary action in accordance with its academic regulations.
+	
+	\signatureline{\StudentName}
+	
+	\chapter*{Author's Declaration}
+	\phantomsection
+	\addcontentsline{toc}{chapter}{Author's Declaration}
+	
+	I, \StudentName, declare that this thesis titled \emph{\ProjectTitle} reflects the work completed by me under the supervision of \SupervisorName. This document has not been submitted elsewhere for the award of any other degree or credit. To the best of my knowledge, the narrative, tables, and technical discussion in this thesis present an honest account of the research, findings, and interpretation.
+	
+	\signatureline{\StudentName}
+	
+	\chapter*{Certificate of Approval}
+	\phantomsection
+	\addcontentsline{toc}{chapter}{Certificate of Approval}
+	
+	It is certified that the research work presented in this thesis, entitled \emph{\ProjectTitle}, has been carried out by \StudentName\ under the supervision of \SupervisorName. This thesis is submitted to the \DepartmentName\ in partial fulfillment of the requirements for the degree of \DegreeProgram\ at \UniversityName, \CampusName.
+	
+	\vspace{0.8cm}
+	\noindent Candidate Name: \StudentName\hfill Signature: \rule{2in}{0.4pt}
+	
+	\vspace{1.0cm}
+	\noindent Supervisor: \SupervisorName\hfill Signature: \rule{2in}{0.4pt}
+	
+	\vspace{1.5cm}
+	\noindent Graduate Program Coordinator\hfill Signature: \rule{2in}{0.4pt}
+	
+	\vspace{0.8cm}
+	\noindent Head of Department\hfill Signature: \rule{2in}{0.4pt}
+	
+	\chapter*{Abstract}
+	\phantomsection
+	\addcontentsline{toc}{chapter}{Abstract}
+	
+	The reliability of flight data interpretation is essential to surveillance aircraft to aid in safety, mission readiness, and maintenance planning. Condition-based and predictive maintenance methods that make use of operational data to recognize abnormal behavior before they result in an expensive failure are increasingly replacing fixed inspection schedules in modern aviation maintenance processes, as well as in condition-based maintenance strategies, such as adaptive control and adaptive control systems, as well as in prognostics strategies, such as predictive maintenance and predictive control \cite{scott2022defence}. In that context, anomaly detection has become an essential analytical procedure since flight data frequently includes an early warning of an impending system degradation, control instability, sensor drift, or engine-related anomalies that might not be noticed in the normal reviewing process \cite{chandola2009survey,basora2019aviation,nassif2021systematic}. This thesis examines the ability to model healthy flight behavior and apply it as a reference to study potentially faulty behavior in surveillance aircraft. It is focused on a more useful data-driven pipeline that can be used even in the absence of detailed engineering rule books or fault manuals.
+	
+	The suggested work begins with healthy-reference modeling and proceeds to multivariate monitoring and anomaly screening to understand the deviation of test aircraft behavior. It is a combination of standardized preprocessing, principal component analysis, residual monitoring, one-class learning, isolation-based screening, and file-level aggregation to generate interpretable indicators of fault trends \cite{macgregor1995spc,scholkopf2001ocsvm,liu2008iforest}. This architecture aligns with the recent aviation research in which baseline modeling, semi-supervised learning, and anomaly scoring have been employed to help flight safety analysis and health monitoring of fleets under limited labels \cite{janakiraman2016elm,memarzadeh2022resad,basora2021fleet}. In the long term, it is planned to help in earlier maintenance care, better situational awareness.
+	
+	\chapter*{Acknowledgments}
+	\phantomsection
+	\addcontentsline{toc}{chapter}{Acknowledgments}
+	
+	I am sincerely grateful to my supervisor, \SupervisorName, for his guidance, technical insight, and continued support throughout this research. His feedback has been especially valuable during the reformulation of the thesis after the scope and constraints of the available operational material became clearer.
+	
+	I am also thankful to everyone who contributed to the discussion, review, and understanding of the dataset and its limitations. Finally, I acknowledge the support of my family and colleagues for their patience and encouragement throughout this work.
+	
+	
+	\clearpage
+	\tableofcontents
+	\listoffigures
+	\listoftables
+	
+	\clearpage
+	\pagenumbering{arabic}
+	
+	\chapter{Introduction}
+	\chapterquote{It starts with a reliable knowledge of what normal aircraft behavior looks like.}
+	
+	\section{Background}
+	
+	Aircraft maintenance has gradually moved from a purely schedule-driven practice toward a more data-driven discipline that includes monitoring, diagnostics, prognostics, and maintenance decision support. Traditional preventive maintenance is still necessary because aviation assets require certified inspections, controlled maintenance records, and strict safety procedures. However, fixed inspection intervals alone are not always enough to identify early degradation, intermittent abnormal behavior, or slow changes that only become visible when operational data is studied over time. Modern aircraft generate large amounts of flight and system data, and this data can provide a continuous view of how the aircraft behaves during real missions. For surveillance aircraft, this view is especially important because the aircraft is not only expected to fly safely, but also to remain available for long-duration missions, repetitive deployments, and operational tasks where reliability has a direct effect on mission success \cite{tumer1999survey,jardine2006cbm,basora2021fleet}.
+	
+	The increasing value of flight data comes from the fact that modern aircraft are complex cyber-physical systems. Their performance is shaped by interactions among propulsion, control surfaces, sensors, avionics, environmental conditions, and pilot or mission-related inputs. A small abnormality in one part of the aircraft may not immediately appear as a visible failure, but it may slightly change the pattern of several variables. For example, a sensor may begin drifting, an engine-related parameter may become less stable, or a control response may become different from the usual reference behavior. These changes are often difficult to judge through a single variable in isolation. A data-driven maintenance system therefore needs to study the aircraft as a connected multivariate system, where the relationship among variables is just as important as the value of any individual reading.
+	
+	Surveillance aircraft make this problem more sensitive because they are often used in missions where availability, endurance, observation quality, and operational continuity are essential. A training aircraft or a commercial aircraft may follow a relatively structured route pattern, but surveillance aircraft may operate under changing mission requirements, variable altitude profiles, different payload states, long loiter periods, and repeated duty cycles. These variations create a wide range of healthy behavior. As a result, simple rule-based thresholds can be too rigid if they do not consider the full operating context. At the same time, waiting for an obvious failure is not acceptable because the cost of mission interruption, safety risk, and delayed maintenance can be high. The preferred direction is therefore to recognize abnormal tendencies early and to support engineers with evidence that helps them decide which aircraft files or time periods deserve closer inspection \cite{verhagen2018aircraft,scott2022defence,demir2024aiaviation}.
+	
+	The central idea behind this thesis is that fault analysis should begin by understanding healthy aircraft behavior. A reliable picture of normal operation provides the reference against which later data can be judged. If the healthy structure is learned carefully, then defective or suspicious flight files can be compared with that structure to measure how strongly they deviate from expected behavior. This is different from immediately trying to label a specific mechanical fault. In many real aviation datasets, detailed maintenance labels, confirmed fault codes, and complete engineering manuals may not be available to the analyst. In such cases, a direct supervised diagnosis model may appear attractive, but it can become weak or misleading because the labels do not fully describe the real condition of the aircraft. A healthy-reference model is more defensible because it starts from the portion of the data that is most clearly understood.
+	
+	This healthy-reference approach is strongly connected to anomaly detection. Anomaly detection does not require every possible fault type to be known in advance. Instead, it asks whether a new observation, segment, or flight behaves differently from the learned pattern of normal data. In aircraft health monitoring, this is useful because actual faults are rare, abnormal labels can be incomplete, and some faults may appear in a form that has not been seen before. A model trained only to classify known faults may fail when a new fault pattern appears. A model trained to recognize normal behavior can still highlight unusual behavior even if the exact technical cause is not yet known \cite{chandola2009survey,zimek2012outlier,nassif2021systematic}.
+	
+	The practical value of this idea is not that it replaces aircraft engineers. Rather, it organizes the data before expert interpretation. Large flight files may contain thousands or millions of rows, and each row may include many measured variables. Reviewing all of this manually is difficult and inefficient. A baseline-centered screening system can reduce the burden by identifying the files, time segments, or variables that appear most different from the healthy reference. Engineers can then focus their attention on the areas where the data provides stronger evidence of abnormality. In this sense, the model acts as an intelligent filter. It does not make the final maintenance decision by itself, but it can guide the maintenance process toward more relevant evidence.
+	
+	The challenge is that flight data is not simple. It is time-dependent, multivariate, noisy, and affected by operating conditions. A short unusual value may be caused by turbulence, a mission maneuver, a transition between phases, or a temporary measurement irregularity. Likewise, a defective aircraft file may not show a constant abnormal signal throughout the entire flight. It may contain short abnormal intervals mixed with long normal intervals. This means that the analysis must be careful in how it interprets outliers. A single high anomaly score is not necessarily enough to declare a flight defective. More useful evidence is obtained when abnormal scores persist, when multiple variables contribute to the deviation, or when file-level summaries show a consistent separation from healthy behavior.
+	
+	Another difficulty is that healthy behavior itself can be diverse. Different flights may have different durations, routes, altitudes, control actions, and environmental conditions. A strong baseline model must therefore capture common healthy structure without becoming too narrow. When the baseline is too high, it can consider normal variation of the mission as abnormal. When it is excessively loose, it can conceal premature fault behavior. It is this balance that is among the primary factors in the thesis applying a combination of standardized preprocessing, principal component analysis, reconstruction or residual-based monitoring, one-class learning, isolation-based screening, and file-level aggregation. All approaches perceive abnormality in a somewhat different perspective. They combine to present a more comprehensive view than a single model would do on its own \cite{macgregor1995spc,scholkopf2001ocsvm,liu2008iforest}.
+	
+	The reason why principal component analysis has been used is that aircraft variables tend to move in unison. PCA also assists in the representation of the prevailing structure of healthy multivariate behavior with fewer components. When a new data are plotted into that structure, the model may assess whether the observation corresponds to the healthy pattern or whether it has a big residual. It can be applied in the surveillance-aircraft data since some faults can be not seen as a mere violation of the threshold. Alternatively, they can manifest themselves as a fractured association between variables. Residual monitoring thus offers a means of detecting abnormal combinations of readings and not just abnormal individual values \cite{macgregor1994overview,kourti1995batch,westerhuis2000contrib}.
+	
+	Another screening layer is one-class and isolation-based approaches. One-class model tries to study the boundary of the normal data and warns the observations that exceed the boundary. Isolation Forest is another approach that identifies observations that can be isolated more easily than the rest of the data. These techniques can be applied to limited-label aviation data since they do not need a significant set of validated fault classes. These are also useful in comparison since various detectors might react differently to the same abnormal pattern. When the screening result is emphasized by more than one method, the trust in the result is enhanced \cite{scholkopf2001ocsvm,liu2008iforest,liu2012iforest}.
+	
+	This thesis thus fits in the bigger subject of predictive maintenance and prognostics and health management. The goal of predictive maintenance is to shift maintenance activity even nearer to the real state of the asset. It does not just enquire when the next planned inspection should be performed. It inquires about evidence presented by the aircraft that its condition is undergoing a change and whether the evidence ought to be used in maintenance planning. Prognostics and health management builds on this concept by relating detection, diagnosis, prediction, and remaining-useful-life estimation. This current work is primarily concerned with the first step of that chain: developing a trusted anomaly-screening workflow. This is required due to the fact that prediction cannot be relied upon unless the system is able to first identify abnormal behavior in a predictable and understandable manner first \cite{peng2010prognostics,si2011rul,huang2024phm}.
+	
+	The data-based design applied in this thesis is also an indicator of a realistic reality of applied aviation studies. Some questions may be more supported by the available data as compared to others. Ideally each flight file would be paired with full maintenance records, verified component-level faults, environmental labels, phase-of-flight labels, and engineering limits to all variables. Practically, such materials are usually unavailable or incomplete because of the sensitivity of operations, ownership of data or age and design of the record system. The responsible research practice is to not make claims which cannot be substantiated by data at hand. Through this reason, the thesis concentrates on healthy-baseline modeling and anomaly screening as opposed to asserting direct component diagnosis at the present level.
+	
+	This does not diminish the significance of the work. Quite on the contrary, it establishes a good base of subsequent diagnosis and prediction. Even a future engine-focused or subsystem-focused model will require knowledge of which flights are suspicious, what variables act to contribute to abnormal behavior, and whether the abnormal evidence is increasing with time. The present research lays that groundwork by converting raw data of flights into a systematic monitoring process. It further clarifies the future direction since it determines the most helpful modeling choices that can be made in situations where limited data is available, where labels are not completely known, and where the ultimate objective is maintenance support, as opposed to an ultimate objective of being an accurate academic classification.
+	
+	\section{Problem Statement}
+	
+	The initial aim of this thesis was to integrate diagnostic interpretation with fault-trend prediction of surveillance aircraft. That, in the most general sense, would demand a system capable of reading flight data and determining the probable technical cause of a fault, of forecasting whether the fault trend is rising, and of aiding in maintenance planning. Nevertheless, in the course of the study, it was revealed that the existing literature had been able to help prove the side of the problem that is based on the data-driven screening side more than the rule-based diagnostic side. The engineering interpretation material, validated fault labels, and full technical threshold documentation were not readily available to construct a direct limit-based diagnostic engine. This altered the way the thesis was formulated in a significant and methodologically required manner.
+	
+	The thesis was diverted instead of imposing a direct diagnostic model towards healthy-baseline modeling and anomaly screening. This diversion is justifiable since a diagnostic system has to be based on reliable evidence. When the mapping of abnormal behavior of data to certain engineering failures is not complete, the system needs to learn the normal behavior first and detect abnormalities. After such deviations have become stable, they can be subsequently related to more profound technical interpretation. This is a performed method that does not overclaim. It also adheres to the line of thought in numerous anomaly-detection and prognostics and studies, where detection is viewed as a conditioning activity to diagnosis and prognosis \cite{chandola2009survey,jardine2006cbm,si2011rul}.
+	
+	The practical issue in this thesis may thus be formulated as follows: given a series of healthy and defective surveillance-aircraft flight files, how can healthy aircraft behavior be modeled in a consistent multivariate manner, and how can that reference be utilized to identify abnormal trend or inherent suspicious operating patterns in other files that are sufficiently stable to give later interpretation to maintenance operations? This issue does not solely concern generating an individual accuracy score. It encompasses all the steps of data preparation, knowledge of the healthy structure, analysis of row-level anomalies, summary of file-level actions, comparison of detector outputs, and interpretation of the results in a manner, which is realistic to aviation maintenance support.
+	
+	Another issue is the distinction between confirmed fault and abnormality. A row or a segment can be abnormal due to an actual defect, but can also be abnormal due to flight phase, environmental influence, instrument noise or a rare but harmless maneuver. Thus, the thesis does not consider all anomalies as end-result defects. Rather, it uses anomaly scores as evidence. That evidence is further enhanced by the fact that the abnormality is recurring, that the same file is rated high in more than one technique, that the deviation is observable after the process of standardization, and that the file-level summary stands out clearly in comparison to healthy flights. This is more evidence-based framing, which is more appropriate in areas that are sensitive to safety since it keeps the screening and end diagnosis apart.
+	
+	Of particular importance is the difference between the row-level and file-level. The system considers the individual observation at the row level. This can be helpful in finding particular time intervals and determining where the data is going out of line with the healthy reference. Nevertheless, it is hardly ever that aircraft maintenance decisions can be made out of a single row. The engineers normally require knowing that the whole flight file exhibits suspicious conduct, that the abnormality is focused in a tiny section of the flight, and that the conduct is repeated in various files. The file-level view thus summarizes the row-level evidence into a more practical maintenance-oriented summary. In the absence of this aggregation step, the model may generate a large number of anomaly scores without providing a clear picture of the flights to be prioritized.
+	
+	The issue also needs interpretability. In aviation, it is not satisfactory to have a model that merely generates a black-box score. Maintenance analysts should be able to know, why a file is considered suspicious, the nature of the abnormality is mild or strong, and how the outcome is to be compared with other files. This need is met in the thesis through approaches which can be related to the familiar monitoring concepts. PCA and residual monitoring relate the abnormality to the inability to reconstruct the healthy structure. One-class models relate abnormality to the distance to the learned normal boundary. Isolation-based techniques relate abnormality to being out of the bulk of data. File-level aggregation links the row-level signals to flight-level interpretation. This combination renders the workflow more transparent.
+	
+	Data quality also limits the problem. The values in operational flight data can be missing, file lengths unequal, unmatched variables, duplicated or constant columns, measurement noise and outliers which may not always be faults. Unless these issues are addressed in a mannerable way, the model results obtained later may not be reliable. A significant portion of the issue is thus not just model selection, but also controlled preprocessing. The healthy and defective files should be subjected to the same preprocessing in order to make the comparison just. This requires standardization since variables can have varying physical units and numeric ranges. The alignment of the features is required since the model can only compare files by means of common variables. The steps are used to decide the final anomaly scores are indicative of actual behavioral differences or merely inconsistent data preparation.
+	
+	The thesis problem can be thus interpreted as a maintenance-analytics problem at a certain stage. The initial step is to develop a clean and similar dataset. The second stage involves acquiring the normal behavior of the aircraft using the healthy files. The third phase is to implement a number of anomaly-screening procedures to healthy and defective data. The fourth step is to summarize both at rows and files. The fifth step is to debate whether the separation that has been observed is robust enough to justify future diagnostic and predictive tasks. This is a more robust version of this staged formulation than attempting direct flight data to final fault prediction.
+	
+	\section{Research Objectives}
+	
+	The primary goal of this thesis is to create and test a useful model of predicting and analyzing the trends of fault in surveillance aircraft using flight data. The framework is created to focus on a healthy-reference perspective of the aircraft with normal behavior being learned initially and suspicious behavior being detected through the measurement of deviation of the normal behavior. This is not just a technical objective. It is functioning, as the ultimate workflow is expected to generate evidence, which can be utilized to inform subsequent maintenance inspection, file prioritization, and engine or subsystem-oriented inspection.
+	
+	In order to accomplish this purpose, the thesis will follow the following particular purposes:
+	
+	\begin{itemize}
+		\item to create a row-wise dataset (at a consistent level) of healthy and defective aircrafts files;
+		\item to develop a healthy-reference model that describes normal aircraft behavior;
+		\item to compare multivariate anomaly-screening schemes on top of that base line;
+		\item to compare row-level behavior and file-level behavior between healthy and defective flights; and
+		\item to establish a technically based direction in the future towards fault detection and early prediction of the engine.
+	\end{itemize}
+	
+	The initial goal is preparation of data. It involves parsing the provided flight files, reconciling variables that can be used, deal with missing or inapplicable values, and developing a format that can be fed into the same modeling pipeline. This is required as anomaly detection is input sensitive. In case the data is not consistent, the detector can learn artifacts of the data rather than actual aircraft behavior. The separation of healthy and defective groups also forms part of data preparation so that files of healthy data can be used as the reference and defective data can be used to determine whether the model is identifying significant deviation.
+	
+	The second goal is the generation of a healthy-reference model. This is the main premise of the thesis. The primary relationships between variables when the aircraft is in normal operation should be reflected in a healthy-reference model. It must be wide enough to be able to show authentic healthy variation but narrow enough to identify suspicious deviations. The reason why PCA is utilized is that it gives the behavior of the multivariate in a compact manner and also it facilitates the monitoring of residual behavior. The healthy model is the standard in which the subsequent observations are compared.
+	
+	The third goal will be to test various anomaly-screening approaches. A single detector is not relied on in the thesis since no one technique can be best applied to all aviation data. One-class learning, isolation-based screening and PCA residual monitoring offer a different perspective of abnormality. Comparing them can be used to establish the stability of the separation between healthy and defective files. This goal also aids in determining whether the dataset is strong in abnormal patterns or whether the signal has weak signals that need future modeling to be narrowed down to a smaller range.
+	
+	The fourth task is to compare file and row-level behavior. Row-level analysis is used to locate local abnormal points or intervals whereas file-level analysis is used to summarize the entire condition of a complete flight file. This difference is required due to the fact that the maintenance support needs detail as well as prioritization. Engineers might be interested in knowing the precise times that abnormality takes place, but they also require a bigger picture of which files are most questionable. File-level aggregation thus reduces a large number of row-level scores into feasible aggregations like mean anomaly score, maximum anomaly score, abnormal-row proportion or total risk ranking.
+	
+	The fifth goal is to determine the way forward with engine-based fault detection and early prediction. The thesis under development is not the ultimate stage of the system. It is the screening and baseline. After the workflow has identified the suspicious files and abnormal patterns, subsequent work can concentrate on the engine-related variables, the time series model, the sequential trend analysis, and the more robust connection between the anomaly evidence and maintenance history. This goal is added since the usefulness of the thesis is not just on the existing results but also on the basis it provides on the subsequent research stage.
+	
+	All these objectives constitute a complete research direction. They take the raw data as inputs and an interpretable framework of screening as outputs. They also maintain the scope as realistic as possible by aligning the modeling approach to evidence available. The thesis does not indicate that all abnormal scores are valid aircraft faults. Rather, it tries to generate a reliable, systematic, and repeatable way of determining the location of abnormal behavior and how the behavior can be condensed to be interpreted later in a technical manner.
+	
+	\section{Research Questions}
+	
+	The research questions used in the study are the following:
+	
+	\begin{itemize}
+		\item To what extent can a standardized multivariate baseline well represent healthy surveillance-aircraft behavior?
+		\item Which anomaly-screening techniques are best at distinguishing between healthy and defective flight records, using the existing dataset?
+		\item What is the stability of the results when analysis is switched to row-level scores as opposed to file-level interpretation?
+		\item What are the most useful technical decisions made during the current phase that will be relevant to the work on engine-related fault prediction in the future?
+	\end{itemize}
+	
+	The initial research question is on the baseline itself. The healthy data has to be meaningful before the defective files can be judged. This necessitates the thesis to focus on the investigation of whether the primary structure of healthy aircraft operation can be captured by a standardized multivariate modeling. This question is significant since a bad baseline will give a bad anomaly score. When the model of good health is too limited, it can also consider normal variation abnormal. In case it is too broad it might not be able to spot early deviations. Quality of the workflow is thus dictated by the quality of the baseline.
+	
+	The second research question is the comparison of detectors. Various anomaly-detection techniques are grounded on various assumptions. PCA residual monitoring is aimed at multivariate structure and reconstruction error. One-class techniques address whether data is within or outside the normal boundary learned. Isolation-based approaches are concerned with the ease with which the observations can be decoupled of the underlying data distribution. In comparison of these approaches, the thesis explores which perspective of abnormality best applies to the present surveillance-aircraft data. This is a practical question to consider, as maintenance-support systems cannot be based on an approach simply because it is trendy. They must base on the methodology that provides consistent and interpretable data on the available information.
+	
+	The third research question is concerned with stability and aggregation. A row-level result can appear robust, but not have any meaning when summarised at the file level. Equally, a file can have a few bad rows without necessarily being faulty. The question is whether the evidence will still be useful when the analysis is shifted away to individual flight files and towards complete flight files. It is particularly applicable since decisions related to operations are frequently reached at aircraft/ flight- file level. When the row level anomalies cannot be summarized into a stabilized file level signal, the model will not be easy to apply in practice.
+	
+	The fourth research question links the present research to the next stage. As the existing evidence is in favor of screening compared to final diagnosis, the thesis should determine what is to be taken into the second step. This involves choices of features, normalization, baseline formation, aggregation of scores, choice of detectors and whether engine specific variables or time modeling are necessary. The significance of the answer to this question is that it helps to avoid termination of the current work as a single experiment. Rather, it transforms the thesis into a starting point of further studies of early fault prediction.
+	
+	These research questions are not only theoretically, but purposely practical. They are aimed at responding to what can be answered responsibly based on the existing information and how this learning can be used in order to serve a future predictive maintenance workflow. Another aspect that is indicative of the staged nature of the project is the questions. Detector comparison must be preceded by a powerful baseline. File-level interpretation requires pre-processing by detector comparison. Interpretation of files should precede any meaningful diagnostic and predictive extension. This sequence provides the thesis with a methodological orientation.
+	
+	\section{Significance of the Study}
+	
+	This study has practical, methodological, and academic value. In real-life applications, the research assists in establishing a pre-surveillance layer of surveillance-aircraft maintenance. This kind of layer would assist in single-handedly recognizing suspicious files, showing abnormal time periods, and decreasing the volume of data to be checked by engineers manually. Although the system may not offer a final diagnosis of the component, it can still enhance the maintenance workflow as it allows the abnormal evidence to be more visible and organized. Such screening can be very useful in the operation settings where time, availability, and security are considered.
+	
+	Mission readiness is also associated with the operational significance. Repeat missions may also need surveillance aircraft with downtime potentially impacting the planning, coverage, and response capabilities. The problem that appears to be minor in the beginning can potentially lead to the cost of maintenance being larger in the future or decrease the level of confidence with which operators regard the aircraft. A data-driven screening system can assist the maintenance crews to shift toward proactive attention instead of reactive review by detecting perceptions that are not healthy behavior. It is able to answer questions like what files should be given priority, whether abnormality occurs in isolation or in multiple defective files and whether the abnormal signal is of the same type.
+	
+	The other useful contribution is that the study does not overstep the boundaries of the available data. In practice in most real-world projects, one is under pressure to generate a direct prediction or diagnosis where the labels are weak. This may result in models that appear spectacular in a report, but fail in a real maintenance environment. The current thesis does not have such an issue because it concentrates on what the data can validate. It establishes a background, identifies deviations, and talks about the possibilities of how the deviations can be used in the future. This renders the research more useful as it is not ignorant of uncertainty and it does not mislead anomaly screening and ultimate fault verification.
+	
+	The study is of methodological value in that it integrates a number of monitoring concepts into a single workflow. PCA offers a framework to model healthy multivariate behavior. Residual monitoring detects observations that are not in that form. One-class learning offers a normality view that is boundary based. Isolation based screening is a distribution based perspective of abnormal behavior. Aggregation transforms row scores into file scores. The combination is more robust than individual detector in that it enables the analysis to compare the various abnormality forms. It also enables the thesis to talk about agreement, disagreement and stability between methods.
+	
+	The research is also noteworthy in that it highlights the relationship between modeling and maintenance interpretation. Most machine-learning research centers primarily on the performance of the models, yet in the case of aviation maintenance, numerical metrics are not sufficient. It needs a traceable workflow that describes how data was ready, what normal behavior is, how deviation was quantified and how the results are to be interpreted. The modeling process is made more transparent by organizing the analysis in accordance with these steps. It is significant to any other system that may be adopted in the future by engineers, analysts or maintenance planters.
+	
+	The thesis is also a contribution to the body of literature on anomaly detection and predictive maintenance in limited-label settings. The aviation sector is usually full of uncommon failures, un-labeled components, and delicate working information. These circumstances complicate the fully supervised learning. One viable alternative is the healthy-baseline approach, as this can be constructed even in the absence of more detailed fault classes. The thesis thus contributes to the literature by demonstrating how anomaly detection can be established as the initial step in a bigger prognostics and health management process \cite{basora2019aviation,basora2021fleet,scott2022defence}.
+	
+	Another benefit of the study is that it elucidates the position of file-level analysis. Most anomaly-detection techniques generate scores on an observation scale, although higher-level summaries are typically needed in operational decision-making. The thesis links the machine-learning output to real-world maintenance requirements by considering aggregation as a required process and not an added value. This is significant since the model which results in a large number of row-level scores without a definite file-level meaning may be of no use to the user. The results can be ranked, compared, and viewed in a file-level view, which is easier to review.
+	
+	Lastly, the paper is meaningful as it preconditions the engine-oriented early fault detection. Faults affecting engines are mostly critical as they may influence performance, safety, endurance and cost of maintenance. A prior detection layer is however needed to perform reliable prediction. The presently existing thesis presents that layer by demonstrating how standard behavior can be modeled and how anomalies can be quantified. Subsequent research can build on this basis by choosing engine-relevant variables, including time-series models, associating abnormal scores with maintenance events, and forecasting whether a suspicious trend is growing prior to becoming serious.
+	
+	\section{Contributions of the Thesis}
+	
+	The thesis at hand contributes as follows:
+	
+	\begin{itemize}
+		\item it re-formulates the surveillance-aircraft problem into a reasonable healthy-baseline formulation;
+		\item it builds a multistage workflow that integrates preprocessing and PCA monitoring, one-class learning, isolation-based screening, and score aggregation;
+		\item it reports initial row-level and file-level results on a real dataset subdivided into healthy and defective groups; and
+		\item it determines the methodological options that ought to inform the following engine-based phase of the work.
+	\end{itemize}
+	
+	Restatement of the research problem is the first contribution. The thesis started with an overall diagnostic and predictive objective, yet the data available did not lend sufficient support to component-level diagnosis. The thesis restructured the problem in terms of healthy-baseline modeling, rather than pushing a weak diagnostic claim. This source of knowledge is significant, as it demonstrates how an applied aviation issue can be modified in a responsible way in case the evidence provided alters. The latter formulation is more realistic, defensible and closer to limited-label anomaly-detection studies.
+	
+	The second one is the creation of a full screening workflow. The model stage is not the starting point of the workflow. It starts with data preparation, as the quality of flight-data analysis is greatly reliant on aligned variables, uniform scaling, and the management of imperfect records. It then constructs a healthy reference, uses various detectors and summarizes the evidence. This order is significant as it transforms the thesis into the repeatable procedure instead of a set of experiments. It is also possible to add more data, more technical labels or more special models to the same structure later.
+	
+	The third input is the application of multivariate healthy behavior as the primary point of reference. This is significant since aircraft systems do not constitute independent groups of variables. Numerous significant variations are observed in the relationship between variables but not in individual readings. The thesis is concerned with the structure of the data by applying PCA-based monitoring and other screening techniques. This enables the model to identify the behavior that does not conform to the healthy scheme despite clear indications that individual measurements exceed a given threshold.
+	
+	The fourth one is the comparison of the row-level evidence and file-level evidence. It is a viable addition since it fills the gap between the machine-learning output and its use in maintenance. The results of a row are helpful to inspect at the local level, whereas file-level summaries are required to be used in prioritization. The thesis establishes a more concrete connection between data science and operational review by addressing both levels. It also brings out the reason why not only isolated outliers but also persistence, concentration and aggregation of abnormal behavior should be put into consideration by a maintenance-support model.
+	
+	The other contribution is the identification of the future technical direction. The thesis does not conclude with the reporting of the present results. It describes how the existing baseline can be used to facilitate subsequent engine-oriented fault detection and early prediction. These involve the necessity to enhance feature selection, relate anomaly findings to maintenance history, add time modeling, and to check the system on other aircraft data. This contribution holds significance since it transforms the current work into a stepping stone towards a more powerful predictive maintenance system.
+	
+	The interpretation of these contributions should be as the basis of a bigger mechanism, as opposed to a complete substitution of expert aircraft maintenance judgment. The thesis does not argue that anomaly scores can be used to diagnose all the aircraft faults. Rather it offers a systematic approach to locating where abnormal evidence can be found, the strength of that evidence, and how the evidence varies when the analysis is performed not on individual rows but on entire flight files. Practically, this implies that the work can be used to support a future workflow where data-driven screening can be used to identify candidate flights and engineers can then relate those results to aircraft knowledge, component behavior, and maintenance history.
+	
+	Another addition is the scope clarification. In applied research, it is usual that the data at hand may influence what can be rightly asserted. This thesis explicitly acknowledges the limitation as well as constructing the model on what the data can validate. That renders the research more transparent. Instead of coercing a direct diagnosis where technical labels are not adequately available, the work sets a defensible basis and resorts to it as a stepping stone to subsequent fault prediction. This plays a significant role in making sure that it is not overstated and that the analysis is not going out of hand with the available evidence in the dataset.
+	
+	\chapter{Literature Review}
+	
+	\section{Anomaly Detection as a Prerequisite to Fault Analysis}
+	
+	Anomaly detection is typically applied when the primary objective is to find the non-conforming observations to the system behavior. Applications to statistical, distance-based, density-based, classification-based, and reconstruction-based methods are included in the field, which is particularly relevant in areas where rare abnormal events are more significant than average events \cite{chandola2009survey,zimek2012outlier,nassif2021systematic}. Practically speaking, the initial step of analysis may be anomaly detection, followed by diagnosis and prognosis, since it provides a simple answer: what in the data does not seem to fit the known pattern of normal operation?
+	
+	In the case of aircraft systems, it is a crucial role. The impacts of the missed abnormality may be increased maintenance cost, mission interruption, inefficient operation, or safety risk. Simultaneously, fault labels tend to be sparse, inconsistent or delayed. That is the reason why anomaly detection is still a popular concept in aviation despite more complex diagnostic objectives that may be pursued in the future \cite{basora2019aviation,demir2024aiaviation}. When this happens, it becomes as crucial as the quality of the detector itself.
+	
+	\section{Predictive Maintenance and PHM in Aviation}
+	
+	Prognostics and health management offers the more general context in which aircraft anomaly detection tends to be placed. Surveys on condition-based maintenance and PHM all indicate that valuable maintenance intelligence requires a sequence of processes: data gathering, health-state characterization, fault-detection, fault-diagnosis and remaining-useful-life-prognostication \cite{jardine2006cbm,peng2010prognostics,si2011rul}. The chain is complex in the aviation world due to certificate issues, sensitive data, dynamic mission environment, and infrequence of extreme faults.
+	
+	The recent defence-oriented reviews also indicate that predictive maintenance of fixed-wing aircraft is operationally useful but challenging technically due to the heterogeneity of data sources, low frequency of fault events and the sensitivity of maintenance outcomes to environmental and operational factors as well as to operational factors. This supports the design used in the present thesis. To predict the deterioration in the future, a model must generate a believable image of healthy behavior and sound evidence of unhealthy behavior before it can do so.
+	
+	\section{Aviation-Specific Anomaly Detection Studies}
+	
+	The field of aviation anomaly detection has grown into a significant subfield. Basora, Olive, and Dubot have studied the availability of data-driven anomaly-detection techniques used in the aviation domain and emphasized the significance of unsupervised and weakly supervised models to flight data, particularly due to its scarce labels and time-series structure considerations. Further research by Basora and others on aircraft fleet health monitoring also demonstrated that anomaly-detection methods can be practically useful in a fleet-health context when they are combined with an effective operational understanding of the system being monitored \cite{basora2021fleet}.
+	
+	Other aviation research depicts a wide-ranged methodological approach. Janakiraman and Nielsen applied extreme learning machines to detect aviation anomalies and demonstrated that the rapid model development could be effective in case of large operational data sets \cite{janakiraman2016elm}. Li and coauthors used clustering algorithms to the flight data to discover abnormal operations and proved that the grouping of data may reveal strange operational patterns despite the absence of explicit labels on the data set \cite{li2015clustering}. Jasra and colleagues suggested a machine-learning and statistical anomaly-detector in flight data, which is a hybrid solution that represents the ongoing importance of adhering to model-based reasoning with data-driven scoring as an alternative to relying on either of those approaches alone.
+	
+	This literature indicates a valuable lesson to the current thesis: detection of aviation anomalies is most commonly successful when the modeling decision is as good as its labels and data structure. Since the existing surveillance-aircraft data points to a healthier-reference modeling as compared to direct fault-class supervising, a baseline-centered design aligns with the literature.
+	
+	\section{Multivariate Statistical Monitoring and PCA-Based Methods}
+	
+	The multivariate statistical process monitoring methods based on principal component analysis and similar remain very relevant in fault detection since they offer brief models of normal variation along with interpretable monitoring statistics. The general principle is to be able to learn a low-dimensional representation using normal operating data and then gauge whether new measurements belong to the learned structure or not \cite{macgregor1994overview,macgregor1995spc,kourti1995batch}. Under this model, Hotelling $T^2$ is used to represent the deviation within the retained component space and the squared prediction error or $Q$ statistic is used to represent the behavior which is not explained by the model.
+	
+	The methods are particularly appealing when engineers require additional scores than binary. PCA-based monitoring can be used to monitor a deviation, with contribution analysis and residual inspection helping to infer which variables contribute most to the deviation, making contribution analysis useful not only in screening but also in subsequent interpretation. Moreover, PCA-based monitoring does not necessitate a large amount of healthy data when compared to more profound models and is not contingent on exhaustively labeled fault classes. This renders it highly appropriate at the present phase of the thesis of surveillance-aircraft.
+	
+	The primary shortcoming of PCA is that it is linear. In the event that the healthy data have strong nonlinear relationships or sharp transitions in operating modes, a linear latent-space model might fail to describe all normal variation. Nevertheless, the literature demonstrates that PCA and the associated latent-variable approaches remain effective as first-line monitoring instruments due to their ability to offer robustness, speed and interpretability \cite{macgregor1994overview,westerhuis2000contrib}. This is why the current thesis considers PCA as a focal layer of reference as opposed to viewing it as a mere visualization aid.
+	
+	\section{One-Class and Isolation-Based Learning}
+	
+	One-class learning is the right option when it is simpler to draw a line between healthy data and faulty data. One-Class SVM is a method that was proposed by Schölkopf and others that approximates the support of a distribution and generates a decision boundary around normal data \cite{scholkopf2001ocsvm}. The biggest advantage of it is that it can be trained on healthy observations all the way. In aviation and maintenance terms, that is useful since healthy records are generally a lot more accessible than accurately labeled faults.
+	
+	Isolation Forest follows another road. Instead of learning a thick boundary, it isolates points by recursive partitioning and quantifies the effortlessness with which each point can be segregated by contrast with the rest of the information \cite{liu2008iforest, liu2012iforest}. Its benefits are speed, few distributional assumptions and good behavior on high dimensional anomaly tasks. The latter properties are the reasons why isolation-based techniques are often a utilized baseline in the field of industrial anomaly detection and why these techniques can be seamlessly integrated into the existing surveillance-aircraft pipeline. The literature also demonstrates, though, that threshold selection and contamination assumptions may have a significant impact on the results. This is significant to the current thesis since the healthy flight data still has operational outliers, i.e., the default contamination setting can be not indicative of the actual operating profile of the dataset.
+	
+	\section{Deep Learning and Temporal Models in Aviation}
+	
+	Deep learning has become increasingly common in aviation anomaly detection, especially for time-series data. Autoencoders, recurrent networks, and hybrid sequence models are used because they can learn nonlinear temporal dependencies and produce reconstruction-based anomaly scores \cite{luo2021cpsdeep,qin2022hybrid}. Corrado and colleagues used a deep autoencoder for anomaly detection in terminal airspace operations, showing the usefulness of latent representations for aviation safety analysis \cite{corrado2021autoencoder}. Gao and coauthors later proposed a constrained LSTM-autoencoder for flight data outlier detection, further illustrating the value of temporal reconstruction approaches for sequential flight information \cite{gao2023lstm}.
+	
+	Semi-supervised aviation work has also advanced. Memarzadeh, Asanjan, and Matthews proposed RESAD, a robust and explainable semi-supervised model that integrates limited labeled anomalies with a larger pool of unlabeled data \cite{memarzadeh2022resad}. Memarzadeh, Matthews, and Templin also studied multiclass anomaly detection in flight data using semi-supervised explainable deep learning, showing that more detailed abnormality categorization becomes possible when the data and labels support it \cite{memarzadeh2022multiclass}. These studies are important because they indicate where the present thesis can go next. Once a stable healthy baseline is built, later work may move toward more detailed engine-related categories or weakly supervised fault labeling.
+	
+	In spite of these strengths, deep models are not necessarily the right place to start. They can be more demanding than other simpler latent-variable and one-class methods in the size and cleanliness of their datasets, and in their often lengthy tuning and interpretation. They can be considered more as extensions than substitutes of the healthy-baseline framework in the current surveillance-aircraft context.
+	
+	\section{Fault Diagnosis and Engine Health Monitoring}
+	
+	Aircraft and aero-engine health monitoring literature shows that useful diagnostics often combine domain knowledge with data-driven pattern analysis. Tumer and Bajwa surveyed aircraft engine health monitoring systems and emphasized the importance of integrating sensor information with meaningful maintenance interpretation \cite{tumer1999survey}. More recent work by De Giorgi, Campilongo, and Ficarella demonstrated that machine learning can support aero-engine diagnostics when it is tied to engine-performance behavior and health-relevant variables \cite{degiorgi2018engine}. These studies are directly relevant to the future direction of this thesis because the second stage of the work is expected to focus on selected engine-related signals rather than the full aircraft state space.
+	
+	The literature also shows that imbalance is a major challenge in aircraft maintenance modeling. Dangut and colleagues reported that predictive-maintenance performance can deteriorate when true fault cases are much rarer than nominal records, and they proposed methods specifically aimed at this imbalance problem \cite{dangut2022imbalanced}. This is useful for the present thesis because even when the current healthy and defective split appears manageable, later engine-focused work may involve much rarer fault manifestations. The current formulation of baselines provides a solution to that problem by prioritizing healthy modeling and ranking of anomalies prior to class prediction in detail.
+	
+	\section{Research Gap}
+	
+	The literature is abundant in anomaly-detection techniques, still, there are three gaps that can be applied to the current work. First, numerous studies have noted high numerical performance when using datasets that are labeled, structured, or supported by domain when compared to more limited applied projects. Second, several deep-learning studies are promising but need volume of data, label quality or interpretability support which might not be available in an operational surveillance-aircraft environment. Third, how to transition between a healthy-reference anomaly model to a more limited, interpretable engine-based prediction phase in the situation where engineering records are not fully developed remains poorly practiced.
+	
+	This thesis fills in that gap by formalizing a realistic intermediate step. It does not assert that unlimited evidence can be obtained to diagnose the end-to-end diagnosis; rather, it establishes a healthy baseline, compares various approaches of anomaly screening, and applies the findings to outline a plausible future approach to predicting engine-related faults. In that regard, the input of the work does not merely consist of a series of initial findings. It is also a rigorous statement of the problem which brings the methodology in line with the evidence available.
+	
+	\chapter{Approach}
+	
+	\section{Overview of the Proposed Framework}
+	
+	The suggested framework is in a progressive manner. It starts with dataset review and schema normalization, proceeds to healthy-reference standardization, uses latent-variable and one-class monitoring methods and finally combines detector outputs into row-level and file-level fault-trend indicators. The layout is aimed at being practical and interpretable. Selection of methods was based not only on the fact that they are used in anomaly detection, but also on the fact that they can be used in the current data constraints in a meaningful way, i.e. in a way that does not yield useless results or solutions to the problem at hand, i.e. does not yield random results \cite{macgregor1995spc,scholkopf2001ocsvm,liu2008iforest}.
+	
+	\insertfigure{software_architecture_placeholder.pdf}{Planned analytical flow from data loading and healthy-baseline generation to anomaly screening, file-level aggregation, and analyst review.}{fig:framework}
+	
+	\section{Dataset Review and Preparation}
+	
+	A set of spreadsheet-form surveillance-aircraft flight files were used as the baseline of the study. These files were initially checked in terms of usability, consistency and relevancy. As the inspection of the dataset revealed, there were 23 files that can be stored to be used in the next step of the analysis. These were 9 healthy and 14 defective files. Following schema alignment and consolidation, the usable dataset had 312,501 rows, 142,391 healthy file and 170,110 defective file rows respectively. The stage of data preparation consisted of a number of steps:
+	
+	\begin{itemize}
+		\item checking of raw files and deletion of non-useful or non-consistent records;
+		\item correspondence of variable names and schema between files;
+		\item retention of similar numeric channels to model by;
+		\item aggregation to a row-level analytical table; and
+		\item assigning of healthy or defective group labels to be evaluated.
+	\end{itemize}
+	
+	This preparation stage was essential because flight-data analysis is highly sensitive to structural inconsistency. A detector can appear to find faults when it is actually responding to unit differences, missing-channel artifacts, or schema drift. The preprocessing pipeline therefore aimed to remove avoidable technical noise before any monitoring model was fitted.
+	
+	\begin{table}[htbp]
+		\centering
+		\caption{Dataset profile after review and preprocessing}
+		\label{tab:dataset-profile}
+		\small
+		\begin{tabular}{|p{3.4cm}|p{2.0cm}|p{6.8cm}|}
+			\hline
+			\textbf{Category} & \textbf{Count} & \textbf{Description} \\
+			\hline
+			Valid files & 23 & Files retained after review and cleaning \\
+			\hline
+			Healthy files & 9 & Used to construct the healthy baseline \\
+			\hline
+			Defective files & 14 & Used to test anomaly separation and trend behavior \\
+			\hline
+			Healthy rows & 142,391 & Standardized using healthy-reference statistics \\
+			\hline
+			Defective rows & 170,110 & Evaluated against the healthy baseline \\
+			\hline
+			Total rows & 312,501 & Final row-level dataset used for current experiments \\
+			\hline
+		\end{tabular}
+	\end{table}
+	
+	\insertfigure{class_imbalance_profile.pdf}{Row-level and file-level distribution of healthy and defective samples after preprocessing.}{fig:imbalance}
+	
+	\section{Healthy-Baseline Construction}
+	
+	The central design choice of the thesis is to learn normal aircraft behavior from healthy files and then measure deviation from that reference. This baseline-centered strategy is consistent with one-class learning and multivariate process monitoring, both of which assume that healthy behavior is easier to characterize than faulty behavior \cite{scholkopf2001ocsvm,macgregor1995spc,westerhuis2000contrib}. In the present work, the healthy rows were used to compute the scaling statistics needed for standardization and to fit the baseline models.
+	
+	Let $x \in \mathbb{R}^p$ denote a row of selected flight variables. Standardization is performed by
+	
+	\[
+	z = \frac{x - \mu_h}{\sigma_h}
+	\]
+	
+	where $\mu_h$ and $\sigma_h$ are the healthy-data mean and standard deviation vectors. This transformation places the features on the same scale and provides the subsequent comparison with the meaning. Significantly, the statistics are based on healthy data only. That maintains the reference in the nominal behavior instead of an amalgamation of normal and abnormal states.
+	
+	\section{PCA-Based Monitoring}
+	
+	Principal component analysis is used to compress the healthy baseline into a lower-dimensional subspace that captures the dominant covariance structure of normal operation. Let the standardized healthy matrix be denoted by $Z_h$. PCA decomposes its covariance structure and selects the leading components that explain most of the healthy-data variance. The projected score vector of a new observation, $z$, is:
+	
+	\[
+	t = P^T z
+	\]
+	
+	and the retained loading vectors can be found in $P$. Two conventional monitoring statistics are then calculated. The former is the $T^2$ of Hotelling,
+	
+	\[
+	T^2 = t^T \Lambda^{-1} t
+	\]
+	
+	where $\Lambda$ is the diagonal matrix of retained eigenvalues. The second one is the squared prediction error,
+	
+	\[
+	\text{SPE} = \| z - PP^T z \|^2
+	\]
+	
+	the measure of the leftover variation that is not included in the healthy subspace retained. These quantities are complementary to each other. A big $T^2$ implies abnormal location within the learned reduced dimensional model whereas a big SPE implies that the observation is not well modeled by the normal structure of the healthy system \cite{macgregor1994overview,macgregor1995spc,westerhuis2000contrib}.
+	
+	\insertfigure{pca_explained_variance.pdf}{Explained variance across principal components for the healthy-reference model.}{fig:pca}
+	
+	\section{Anomaly Screening Models}
+	
+	The thesis compares a number of anomaly-screening methods to prevent reliance on one modeling assumption.
+	
+	\subsection{One-Class SVM}
+	
+	One-Class SVM is trained using healthy rows to predict a boundary of nominal behavior. Observations that do not fit into the learnt support are considered abnormal \cite{scholkopf2001ocsvm}. This model can be employed in situations where the primary objective is to differentiate healthy structure and the rest without multiple fault classes.
+	
+	\subsection{Isolation Forest}
+	
+	Isolation Forest uses recursive random partitioning to isolate samples. Splits that are isolated in fewer observations are regarded as more abnormal \cite{liu2008iforest,liu2012iforest}. The model is appealing since it is quick and efficient in high-dimensional anomaly problems. In the present work, its contamination parameter is not set to some default value but is experimentally optimized since even within healthy files the dataset may have real but not always faulty outliers.
+	
+	\subsection{PCA Monitoring Scores}
+	
+	PCA-based SPE and $T^2$ are also used directly as the indicators of anomaly. This is significant since they are produced out of the healthy baseline itself and not produced out of a different classifier. They also deliver an interpretable course to variable-level analysis by residuals and contributions \cite{westerhuis2000contrib}.
+	
+	\subsection{Refined Ensemble}
+	
+	A refined ensemble is formed by combining normalized evidence from the strongest monitoring channels. The purpose of the ensemble is not to replace the best standalone model. Instead, it provides a practical ranking score that is useful when different detectors highlight overlapping but not identical abnormal regions.
+	
+	\section{Evaluation Strategy}
+	
+	The test measures the detector behavior at two levels.
+	
+	\begin{itemize}
+		\item Row-level evaluation quantifies the ability to distinguish between abnormal and normal rows based on measures like precision, recall, F1-score, ROC-AUC, and average precision.
+		\item File-level assessment combines evidence of anomalies in each file to decide whether there are stable separations between healthy and defective groups of complete flight.
+	\end{itemize}
+	
+	The reason behind this two-level design is that row-level separation might appear robust even in cases where there are still a few healthy files that have significant operational outliers. The file-level assessment thus gives a more conservative operational image.
+	
+	\section{Implementation Notes}
+	
+	The workflow involving the analysis was built up by a series of notebooks, which included review and schema normalization of datasets, exploratory profiling, building baseline, monitoring of PCA, detector assessment, refinement of contamination and validation of files. This was a good implementation since the design of the flight data was made evident upon multiple inspection. The notebook-based process also enabled the possibility of honing the direction of the thesis as it progressed instead of pushing the end-to-end design to a premature conclusion.
+	
+	\begin{table}[htbp]
+		\centering
+		\caption{High-level configuration of the current approach}
+		\label{tab:config}
+		\small
+		\begin{tabular}{|p{3.5cm}|p{9.3cm}|}
+			\hline
+			\textbf{Component} & \textbf{Configuration and role} \\
+			\hline
+			Data source & Spreadsheet-based surveillance-aircraft flight records grouped into healthy and defective files \\
+			\hline
+			Preprocessing & Schema alignment, variable filtering, row-level consolidation, healthy-reference standardization \\
+			\hline
+			Baseline layer & Healthy flights used to learn normal aircraft behavior \\
+			\hline
+			Latent monitoring & PCA-based component model with SPE and $T^2$ statistics \\
+			\hline
+			One-class screening & One-Class SVM trained on healthy rows \\
+			\hline
+			Isolation-based screening & Isolation Forest with contamination tuning \\
+			\hline
+			Aggregation & Detector-score normalization and refined ensemble formation \\
+			\hline
+			Validation & Row-level metrics, file-level ranking, and temporal inspection of top suspicious files \\
+			\hline
+		\end{tabular}
+	\end{table}
+	
+	\chapter{Evaluation and Discussion}
+	
+	\section{Progress Summary}
+	
+	The most recent part of the thesis was concerned with the creation and confirmation of the healthy-baseline pipeline. The final project includes review of the dataset, normalization of the schema, standardized row-level modeling, exploratory profiling, PCA monitoring, anomaly-model comparison, contamination refinement, and validation of files. This step represents the foundational stage of the thesis as opposed to the last engine-specific prediction stage. Nevertheless, it offers sufficient evidence to determine whether the revisualized direction is technically warranted.
+	
+	\begin{table}[htbp]
+		\centering
+		\caption{Milestones completed in the current phase}
+		\label{tab:milestones}
+		\small
+		\begin{tabular}{|p{1.5cm}|p{3.0cm}|p{7.3cm}|p{1.7cm}|}
+			\hline
+			\textbf{Stage} & \textbf{Focus} & \textbf{Main outcome} & \textbf{Status} \\
+			\hline
+			1 & Dataset review & Healthy and defective files were reviewed and organized into a usable workflow. & Complete \\
+			\hline
+			2 & Schema alignment & Variable names and structures were normalized across files. & Complete \\
+			\hline
+			3 & Baseline preparation & A row-level analytical table was constructed and standardized. & Complete \\
+			\hline
+			4 & PCA monitoring & Healthy-reference latent structure and residual statistics were generated. & Complete \\
+			\hline
+			5 & Model comparison & Isolation Forest, One-Class SVM, and PCA-based scores were evaluated. & Complete \\
+			\hline
+			6 & Refinement & Contamination and threshold choices were tuned for stronger screening behavior. & Complete \\
+			\hline
+			7 & Validation & Results were examined at row level and file level. & Complete \\
+			\hline
+		\end{tabular}
+	\end{table}
+	
+	\section{Exploratory Findings}
+	
+	The exploratory analysis showed that defective files are not characterized only by isolated single-point abnormalities. Several defective files contain sustained abnormal intervals and higher concentrations of unusual rows. This is important because it suggests that the observed anomaly behavior is structured rather than purely random. In other words, the detectors are not simply reacting to noise; they are capturing multivariate deviations that persist across time.
+	
+	Simultaneously, the exploratory phase also demonstrated that healthy files may also have nontrivial outlier rates. It is not unexpected in operational flight data, but it is important to interpretation. An otherwise healthy flight can still have some abnormal maneuvers, brief transients and irregular sensor readings. As such, row-level anomaly flags are to be considered alerts and not the actual evidence of fault. This observation aligns with the literature of aviation anomalies, which specify the significance of the context, temporal behavior, and operational interpretation \cite{basora2019aviation,basora2021fleet,demir2024aiaviation}.
+	
+	\insertfigure{eda_file_outlier_profile.pdf}{Share of rows in each file with at least one large standardized deviation.}{fig:eda}
+	
+	\section{Preliminary Quantitative Results}
+	
+	The exploratory analysis revealed that the isolated single-point abnormalities are not the only features of defective files. There are a few problematic files with prolonged abnormal intervals and an increased level of abnormal rows. This is significant as it indicates that the observed aberrant nature is not just arbitrary. That is, the detectors are not a mere response to noise, but a multivariate deviation that carries on over time.
+	
+	\begin{table}[htbp]
+		\centering
+		\caption{Preliminary row-level results from the current phase}
+		\label{tab:row-results}
+		\small
+		\begin{tabular}{|p{4.2cm}|p{1.7cm}|p{1.7cm}|p{1.7cm}|p{2.0cm}|}
+			\hline
+			\textbf{Model} & \textbf{F1-score} & \textbf{Precision} & \textbf{Recall} & \textbf{ROC-AUC / AP} \\
+			\hline
+			PCA SPE & 0.955 & 0.922 & 0.989 & 0.980 \\
+			\hline
+			Isolation Forest (refined) & 0.790 & 0.730 & 0.860 & 0.811 \\
+			\hline
+			One-Class SVM & 0.515 & 0.889 & 0.366 & 0.647 \\
+			\hline
+			Refined ensemble & 0.779 & 0.689 & 0.900 & 0.814 \\
+			\hline
+		\end{tabular}
+	\end{table}
+	
+	These values cannot be taken as final thesis statements, but current results. Nonetheless, the trend is evident. A healthy-baseline design is performing, and the most informative indicators are those of the latent-structure deviation, not of a multifaceted supervised classifier. This corroborates the main thesis ruling to start with healthy-reference modeling.
+	
+	\insertfigure{model_performance_comparison.pdf}{Comparison of key performance metrics across the principal screening models.}{fig:modelperf}
+	
+	\section{Refinement and File-Level Evaluation}
+	
+	Distribution of the classes and existence of operational outliers necessitated refinement. In particular, Isolation Forest was sensitive to the contamination setting. Gradually getting more contaminated enhanced performance, and the highest F1-score was observed at a contamination level of about 0.20. This finding is practically significant in that it demonstrates that detector defaults are not always aligned with the facts of aviation data. A model based on very-rare outliers can cause under-detection of structured abnormality when even healthy operational data has transients.
+	
+	Aggregation at the file level gave a conservative representation compared to the evaluation at the row level. File-level classification with the mean ensemble score was about 65.2\% accurate. This is less than the best result in a row-level, but nonetheless informative. The smaller value is due to overlap due to borderline healthy files that have sufficient unusual rows to raise suspicion upon aggregation. Operation-wise, this is a realistic result. It implies that the system can be effective as a screening and prioritization tool, but a file can only be verified as faulty after a detailed engineering review has been conducted.
+	
+	\begin{table}[htbp]
+		\centering
+		\caption{Selected operational indicators from the current validation stage}
+		\label{tab:file-results}
+		\small
+		\begin{tabular}{|p{4.8cm}|p{2.0cm}|p{5.7cm}|}
+			\hline
+			\textbf{Indicator} & \textbf{Current value} & \textbf{Interpretation} \\
+			\hline
+			Best Isolation Forest contamination & 0.20 & Highest observed F1 among tested contamination values \\
+			\hline
+			Refined ensemble threshold & 0.092 & Current working threshold after score normalization \\
+			\hline
+			File-level accuracy & 65.2\% & Strong separation for the most defective files, with overlap in a few healthy flights \\
+			\hline
+			Key residual variables & 2ffy1, 2ffy2, 2ffy3 and related channels & Strongest healthy-versus-defective contrast for later fault localization \\
+			\hline
+		\end{tabular}
+	\end{table}
+	
+	\insertfigure{file_level_validation.pdf}{Mean ensemble score by file, showing overlap between borderline healthy files and clearly defective files.}{fig:filelevel}
+	
+	\section{Interpretation of the Results}
+	
+	There are three key interpretations to the results. To begin with, the current surveillance-aircraft data is suitable to be modeled using healthy-reference. The clearest indications are the non-conformity to healthy structure, and that is what the baseline-centered design is supposed to quantify. Second, model diversity is still handy. PCA monitoring, One-Class SVM, and Isolation Forest fail differently, and their combined evidence can be used as a valuable resource to rank and review. Third, the data set is still to be taken with care. Flights are not ideal and file level overlap ensures that evidence of anomalies cannot be interpreted as direct diagnostic certainty.
+	
+	This is in line with the literature findings. Repeated studies on aviation anomaly-detection indicate that the performance of the models is influenced by the context of operation, the quality of labels, and the interpretation level at which the outcome is perceived to be found \cite{basora2019aviation,jasra2022hybrid,memarzadeh2022resad}. The scores on rows can still be high and still need engineering inspection at the flight level. The current findings thus reinforce the thesis direction without exaggerating the achieved results.
+	
+	\section{Limitations}
+	
+	There are a number of restrictions which should be stated.
+	
+	\begin{itemize}
+		\item The present study is based on a single existing surveillance-aircraft dataset and thus cannot argue that it is applicable to all aircraft platforms.
+		\item The current labels are differentiating between healthy and defective groups, but do not yet give a finer taxonomy of the types of faults or precise onset.
+		\item The key findings remain on the existing stage of the project and are yet to be expanded into a full-fleet engine-centered fault-prediction module.
+		\item Detailed engineering rule content was unavailable to directly map an anomaly score to explicit maintenance rule.
+	\end{itemize}
+	
+	The work is not invalid of these limitations. They clarify the reason as to why the thesis has been purposefully designed as a baseline-first analysis as opposed to a rule-based diagnostic system in its entirety.
+	
+	\section{Implications for the Next Phase}
+	
+	The outcomes of the evaluation give a direction of the subsequent stage of the thesis. The best path forward is to retain the healthy base as the reference layer and subsequently simplify the analysis to a few variables pertaining to the engine. This step is conceptually correct since engine-centered diagnostics is highly reliant on operating condition. Exhaust gas temperature, rotational behavior, and other variables, as well, are only meaningful when viewed in relation to load, throttle, and phase-of-operation data \cite{tumer1999survey,degiorgi2018engine}. The existing baseline and residual-monitoring pipeline provides the thesis with a reasonable starting point of that narrower and more interpretable problem.
+	
+	\chapter{Conclusion and Future Work}
+	
+	\section{Conclusion}
+	
+	The aim of this thesis was to determine and forecast trends in faults of the surveillance aircraft based on flight data. As the work progressed, the initial issue was necessary to be redefined due to the fact that the evidence at hand favored healthy-reference modeling more than direct rule-based diagnosis. Such change did not undermine the thesis. It rendered the research more justifiable and closer to the organization of the data at hand. 
+	
+	The accomplished step demonstrates that the healthy aircraft behavior can be modeled in a stable and multivariate manner and the deviation of this baseline can be employed to distinguish between healthy and defective records of flights with a meaningful degree of accuracy. PCA-based SPE so far offers the best row-level result when used alone, with Isolation Forest and the refined ensemble being useful complementary methods. The file level results are also more conservative, yet they demonstrate that the method can give priority to suspicious flights, and indicate long-term abnormal periods. Above all, the work has laid a reusing analytical basis in the subsequent phase of the thesis.
+	
+	\section{Future Work}
+	
+	There are 5 key directions of future work.
+	
+	\begin{enumerate}
+		\item The first one is engine-oriented modeling. The next module will restrict detailed analysis to selected engine-related variables so that trend interpretation becomes more meaningful and less diluted by unrelated aircraft channels.
+		\item The second direction is condition-aware feature engineering. Engine indicators will be interpreted relative to operating context, including throttle or phase-related conditions wherever possible.
+		\item The third direction is weakly supervised and semi-supervised extension. Once a stable baseline is available, future models can incorporate limited fault labels and make better use of abnormal segments already highlighted by the current screening pipeline \cite{memarzadeh2022resad,memarzadeh2022multiclass}.
+		\item The fourth direction is temporal prediction. After stable fault-sensitive indicators are identified, the thesis can move toward early warning and trend prediction rather than only static anomaly screening \cite{si2011rul,gao2023lstm}.
+		\item The fifth direction is software realization. The long-term goal is to package the analytical workflow into a usable tool for data loading, anomaly scoring, trend visualization, and maintenance support.
+	\end{enumerate}
+	
+	\begin{table}[htbp]
+		\centering
+		\caption{Planned direction for the next phase of the thesis}
+		\label{tab:future-work}
+		\small
+		\begin{tabular}{|p{3.4cm}|p{9.7cm}|}
+			\hline
+			\textbf{Planned area} & \textbf{Direction} \\
+			\hline
+			Engine-focused module & Build fault detection and early trend prediction on top of the healthy baseline using selected engine-related variables \\
+			\hline
+			Condition awareness & Model engine behavior relative to operating context rather than in isolation \\
+			\hline
+			Label strategy & Incorporate weak labels and semi-supervised refinement where supported by data \\
+			\hline
+			Temporal modeling & Extend from anomaly scoring to early trend prediction and warning generation \\
+			\hline
+			Software realization & Convert the research workflow into a practical analysis and review tool \\
+			\hline
+		\end{tabular}
+	\end{table}
+	
+	\insertfigure{pca_fault_score_top_defective_files.pdf}{Illustrative temporal abnormality profile for top defective files, motivating the next engine-focused phase.}{fig:future}
+	
+	\begin{thebibliography}{99}
+		
+		\bibitem{tumer1999survey}
+		I. Tumer and A. Bajwa,
+		``A survey of aircraft engine health monitoring systems,''
+		in \emph{Proceedings of the 35th Joint Propulsion Conference and Exhibit}, 1999.
+		
+		\bibitem{jardine2006cbm}
+		A. K. S. Jardine, D. Lin, and D. Banjevic,
+		``A review on machinery diagnostics and prognostics implementing condition-based maintenance,''
+		\emph{Mechanical Systems and Signal Processing}, vol. 20, no. 7, pp. 1483--1510, 2006.
+		
+		\bibitem{chandola2009survey}
+		V. Chandola, A. Banerjee, and V. Kumar,
+		``Anomaly detection: A survey,''
+		\emph{ACM Computing Surveys}, vol. 41, no. 3, pp. 1--58, 2009.
+		
+		\bibitem{peng2010prognostics}
+		Y. Peng, M. Dong, and M. J. Zuo,
+		``Current status of machine prognostics in condition-based maintenance: A review,''
+		\emph{The International Journal of Advanced Manufacturing Technology}, vol. 50, pp. 297--313, 2010.
+		
+		\bibitem{si2011rul}
+		X.-S. Si, W. Wang, C.-H. Hu, and D.-H. Zhou,
+		``Remaining useful life estimation -- a review on the statistical data-driven approaches,''
+		\emph{European Journal of Operational Research}, vol. 213, no. 1, pp. 1--14, 2011.
+		
+		\bibitem{zimek2012outlier}
+		A. Zimek, E. Schubert, and H.-P. Kriegel,
+		``A survey on unsupervised outlier detection in high-dimensional numerical data,''
+		\emph{Statistical Analysis and Data Mining}, vol. 5, no. 5, pp. 363--387, 2012.
+		
+		\bibitem{liu2008iforest}
+		F. T. Liu, K. M. Ting, and Z.-H. Zhou,
+		``Isolation forest,''
+		in \emph{Proceedings of the 2008 Eighth IEEE International Conference on Data Mining}, pp. 413--422, 2008.
+		
+		\bibitem{liu2012iforest}
+		F. T. Liu, K. M. Ting, and Z.-H. Zhou,
+		``Isolation-based anomaly detection,''
+		\emph{ACM Transactions on Knowledge Discovery from Data}, vol. 6, no. 1, pp. 1--39, 2012.
+		
+		\bibitem{scholkopf2001ocsvm}
+		B. Sch\"olkopf, J. C. Platt, J. Shawe-Taylor, A. J. Smola, and R. C. Williamson,
+		``Estimating the support of a high-dimensional distribution,''
+		\emph{Neural Computation}, vol. 13, no. 7, pp. 1443--1471, 2001.
+		
+		\bibitem{macgregor1994overview}
+		J. F. MacGregor,
+		``Statistical process control of multivariate processes,''
+		\emph{IFAC Proceedings Volumes}, vol. 27, no. 8, pp. 341--350, 1994.
+		
+		\bibitem{macgregor1995spc}
+		J. F. MacGregor and T. Kourti,
+		``Statistical process control of multivariate processes,''
+		\emph{Control Engineering Practice}, vol. 3, no. 3, pp. 403--414, 1995.
+		
+		\bibitem{kourti1995batch}
+		T. Kourti and J. F. MacGregor,
+		``Analysis, monitoring and fault diagnosis of batch processes using multiblock and multiway PLS,''
+		\emph{Journal of Process Control}, vol. 5, no. 4, pp. 225--239, 1995.
+		
+		\bibitem{westerhuis2000contrib}
+		J. A. Westerhuis, S. P. Gurden, and A. K. Smilde,
+		``Generalized contribution plots in multivariate statistical process monitoring,''
+		\emph{Chemometrics and Intelligent Laboratory Systems}, vol. 51, no. 1, pp. 95--114, 2000.
+		
+		\bibitem{li2015clustering}
+		L. Li, S. Das, R. J. Hansman, R. Palacios, and A. N. Srivastava,
+		``Analysis of flight data using clustering techniques for detecting abnormal operations,''
+		\emph{Journal of Aerospace Information Systems}, vol. 12, no. 9, pp. 587--598, 2015.
+		
+		\bibitem{janakiraman2016elm}
+		V. M. Janakiraman and D. Nielsen,
+		``Anomaly detection in aviation data using extreme learning machines,''
+		in \emph{2016 International Joint Conference on Neural Networks}, 2016.
+		
+		\bibitem{verhagen2018aircraft}
+		W. J. C. Verhagen and R. Curran,
+		``Predictive maintenance for aircraft components using proportional hazard models and decision trees,''
+		\emph{Aerospace}, vol. 5, no. 3, 2018.
+		
+		\bibitem{degiorgi2018engine}
+		M. G. De Giorgi, S. Campilongo, and A. Ficarella,
+		``A diagnostics tool for aero-engines health monitoring using machine learning technique,''
+		\emph{Energy Procedia}, vol. 148, pp. 860--867, 2018.
+		
+		\bibitem{basora2019aviation}
+		L. Basora, X. Olive, and T. Dubot,
+		``Recent advances in anomaly detection methods applied to aviation,''
+		\emph{Aerospace}, vol. 6, no. 11, p. 117, 2019.
+		
+		\bibitem{rouzbahani2020cps}
+		H. M. Rouzbahani, H. Karimipour, A. Rahimnejad, A. Dehghantanha, and G. Srivastava,
+		``Anomaly detection in cyber-physical systems using machine learning,''
+		in \emph{Handbook of Big Data Privacy}, pp. 219--235, 2020.
+		
+		\bibitem{corrado2021autoencoder}
+		S. J. Corrado, T. G. Puranik, O. J. Pinon-Fischer, D. Mavris, and E. Morelli,
+		``Deep autoencoder for anomaly detection in terminal airspace operations,''
+		in \emph{AIAA Aviation 2021 Forum}, 2021.
+		
+		\bibitem{nassif2021systematic}
+		A. B. Nassif, M. A. Talib, Q. Nasir, and F. M. Dakalbab,
+		``Machine learning for anomaly detection: A systematic review,''
+		\emph{IEEE Access}, vol. 9, pp. 78658--78700, 2021.
+		
+		\bibitem{basora2021fleet}
+		L. Basora, P. Bry, X. Olive, and F. Freeman,
+		``Aircraft fleet health monitoring with anomaly detection techniques,''
+		\emph{Aerospace}, vol. 8, no. 4, p. 103, 2021.
+		
+		\bibitem{luo2021cpsdeep}
+		Y. Luo, Y. Xiao, L. Cheng, G. Peng, and D. D. Yao,
+		``Deep learning-based anomaly detection in cyber-physical systems: Progress and opportunities,''
+		\emph{ACM Computing Surveys}, vol. 54, no. 5, 2021.
+		
+		\bibitem{jasra2022hybrid}
+		S. Jasra, G. Valentino, A. Muscat, and R. Casha,
+		``Hybrid machine learning--statistical method for anomaly detection in flight data,''
+		\emph{Applied Sciences}, vol. 12, no. 20, p. 10261, 2022.
+		
+		\bibitem{memarzadeh2022multiclass}
+		M. Memarzadeh, B. Matthews, and T. Templin,
+		``Multiclass anomaly detection in flight data using semi-supervised explainable deep learning model,''
+		\emph{Journal of Aerospace Information Systems}, vol. 19, no. 2, pp. 83--97, 2022.
+		
+		\bibitem{memarzadeh2022resad}
+		M. Memarzadeh, A. A. Asanjan, and B. Matthews,
+		``Robust and explainable semi-supervised deep learning model for anomaly detection in aviation,''
+		\emph{Aerospace}, vol. 9, no. 8, p. 437, 2022.
+		
+		\bibitem{dangut2022imbalanced}
+		M. D. Dangut, I. K. Jennions, and S. King,
+		``Handling imbalanced data for aircraft predictive maintenance,''
+		\emph{Applied Soft Computing}, vol. 127, p. 108924, 2022.
+		
+		\bibitem{scott2022defence}
+		M. J. Scott and others,
+		``A systematic literature review of predictive maintenance for defence fixed-wing aircraft sustainment and operations,''
+		\emph{Sensors}, vol. 22, no. 18, p. 7070, 2022.
+		
+		\bibitem{qin2022hybrid}
+		K. Qin, Q. Wang, B. Lu, H. Sun, and P. Shu,
+		``Flight anomaly detection via a deep hybrid model,''
+		\emph{Aerospace}, vol. 9, no. 6, p. 329, 2022.
+		
+		\bibitem{gao2023lstm}
+		L. Gao, C. Xu, F. Wang, J. Wu, and H. Su,
+		``Flight data outlier detection by constrained LSTM-autoencoder,''
+		\emph{Wireless Networks}, vol. 29, no. 7, pp. 3051--3061, 2023.
+		
+		\bibitem{jeffrey2023review}
+		N. Jeffrey, Q. Tan, and J. R. Villar,
+		``A review of anomaly detection strategies to detect threats to cyber-physical systems,''
+		\emph{Electronics}, vol. 12, no. 15, p. 3283, 2023.
+		
+		\bibitem{demir2024aiaviation}
+		G. Demir and R. A. Horne,
+		``Artificial intelligence in aviation safety: Systematic review and future directions,''
+		\emph{Artificial Intelligence Review}, 2024.
+		
+		\bibitem{huang2024phm}
+		C. Huang and others,
+		``Prognostics and health management for predictive maintenance: A review on methods, applications and challenges,''
+		\emph{Annual Reviews in Control}, vol. 57, 2024.
+		
+	\end{thebibliography}
+	
+\end{document}

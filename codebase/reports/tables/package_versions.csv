@@ -1,0 +1,11 @@
+package,version
+python,3.10.12
+numpy,2.2.6
+pandas,2.3.3
+scikit-learn,1.6.1
+scipy,1.15.3
+matplotlib,3.10.9
+openpyxl,3.1.5
+xgboost,not_installed
+lightgbm,not_installed
+statsmodels,not_installed

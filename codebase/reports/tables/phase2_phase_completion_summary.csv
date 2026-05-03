@@ -1,0 +1,11 @@
+metric,value
+selected_horizon,30
+files_total,23
+defective_files,14
+healthy_files,9
+usable_defective_files,14
+pre_fault_rows,420
+fault_post_onset_rows,4804
+normal_rows,307277
+training_rows,307697
+positive_training_rows,420

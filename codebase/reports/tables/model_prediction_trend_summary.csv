@@ -1,0 +1,7 @@
+file_name,rows,max_prediction_score,first_pre_fault_row,first_fault_row,first_detected_row,predicted_positive_rows
+Defect15(02).xlsx,2340,0.9999999700416682,2310.0,,2310.0,30
+Defect15(03).xlsx,500,0.9999999683954132,470.0,,470.0,30
+Defected 3.xlsx,500,0.9999999669959103,470.0,,470.0,30
+Defect15(01).xlsx,7379,0.9999999529965042,7349.0,,7349.0,30
+Defect16(01).xlsx,574,0.9999999520493822,544.0,,544.0,30
+Defect16(02).xlsx,2549,0.9999999484867552,2519.0,,2519.0,30

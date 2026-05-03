@@ -1,0 +1,6 @@
+metric,value
+anchor_source_used,anchor_candidates_parquet
+defective_files,14
+anchored_defective_files,14
+usable_defective_files,14
+median_pre_fault_capacity,9590.0

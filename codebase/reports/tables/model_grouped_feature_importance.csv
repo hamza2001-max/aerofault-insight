@@ -1,0 +1,6 @@
+feature_family,features,total_importance,mean_importance
+anomaly_signal,48,0.0,0.0
+change,12,0.0,0.0
+lag,12,0.0,0.0
+slope,6,0.0,0.0
+time,4,0.0,0.0

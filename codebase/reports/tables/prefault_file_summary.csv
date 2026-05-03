@@ -1,0 +1,52 @@
+file_name,group,anchor_mode,anchor_source,usable_for_prediction,target_state,rows
+Defect15(01).xlsx,defective,diagnostic_anchor,diagnostic_anchor,1,fault_post_onset,5052
+Defect15(01).xlsx,defective,diagnostic_anchor,diagnostic_anchor,1,normal,7349
+Defect15(01).xlsx,defective,diagnostic_anchor,diagnostic_anchor,1,pre_fault,30
+Defect15(02).xlsx,defective,diagnostic_anchor,diagnostic_anchor,1,fault_post_onset,2562
+Defect15(02).xlsx,defective,diagnostic_anchor,diagnostic_anchor,1,normal,2310
+Defect15(02).xlsx,defective,diagnostic_anchor,diagnostic_anchor,1,pre_fault,30
+Defect15(03).xlsx,defective,diagnostic_anchor,diagnostic_anchor,1,fault_post_onset,15189
+Defect15(03).xlsx,defective,diagnostic_anchor,diagnostic_anchor,1,normal,470
+Defect15(03).xlsx,defective,diagnostic_anchor,diagnostic_anchor,1,pre_fault,30
+Defect15(04).xlsx,defective,diagnostic_anchor,diagnostic_anchor,1,fault_post_onset,12623
+Defect15(04).xlsx,defective,diagnostic_anchor,diagnostic_anchor,1,normal,470
+Defect15(04).xlsx,defective,diagnostic_anchor,diagnostic_anchor,1,pre_fault,30
+Defect16(01).xlsx,defective,diagnostic_anchor,diagnostic_anchor,1,fault_post_onset,9116
+Defect16(01).xlsx,defective,diagnostic_anchor,diagnostic_anchor,1,normal,544
+Defect16(01).xlsx,defective,diagnostic_anchor,diagnostic_anchor,1,pre_fault,30
+Defect16(02).xlsx,defective,diagnostic_anchor,diagnostic_anchor,1,fault_post_onset,11988
+Defect16(02).xlsx,defective,diagnostic_anchor,diagnostic_anchor,1,normal,2519
+Defect16(02).xlsx,defective,diagnostic_anchor,diagnostic_anchor,1,pre_fault,30
+Defect16(03).xlsx,defective,diagnostic_anchor,diagnostic_anchor,1,fault_post_onset,14173
+Defect16(03).xlsx,defective,diagnostic_anchor,diagnostic_anchor,1,normal,480
+Defect16(03).xlsx,defective,diagnostic_anchor,diagnostic_anchor,1,pre_fault,30
+Defected 1.xlsx,defective,diagnostic_anchor,diagnostic_anchor,1,fault_post_onset,5052
+Defected 1.xlsx,defective,diagnostic_anchor,diagnostic_anchor,1,normal,7349
+Defected 1.xlsx,defective,diagnostic_anchor,diagnostic_anchor,1,pre_fault,30
+Defected 2.xlsx,defective,diagnostic_anchor,diagnostic_anchor,1,fault_post_onset,2562
+Defected 2.xlsx,defective,diagnostic_anchor,diagnostic_anchor,1,normal,2310
+Defected 2.xlsx,defective,diagnostic_anchor,diagnostic_anchor,1,pre_fault,30
+Defected 3.xlsx,defective,diagnostic_anchor,diagnostic_anchor,1,fault_post_onset,15189
+Defected 3.xlsx,defective,diagnostic_anchor,diagnostic_anchor,1,normal,470
+Defected 3.xlsx,defective,diagnostic_anchor,diagnostic_anchor,1,pre_fault,30
+Defected 4.xlsx,defective,diagnostic_anchor,diagnostic_anchor,1,fault_post_onset,12623
+Defected 4.xlsx,defective,diagnostic_anchor,diagnostic_anchor,1,normal,470
+Defected 4.xlsx,defective,diagnostic_anchor,diagnostic_anchor,1,pre_fault,30
+Defected 5.xlsx,defective,diagnostic_anchor,diagnostic_anchor,1,fault_post_onset,9116
+Defected 5.xlsx,defective,diagnostic_anchor,diagnostic_anchor,1,normal,544
+Defected 5.xlsx,defective,diagnostic_anchor,diagnostic_anchor,1,pre_fault,30
+Defected 6.xlsx,defective,diagnostic_anchor,diagnostic_anchor,1,fault_post_onset,11988
+Defected 6.xlsx,defective,diagnostic_anchor,diagnostic_anchor,1,normal,2519
+Defected 6.xlsx,defective,diagnostic_anchor,diagnostic_anchor,1,pre_fault,30
+Defected 7.xlsx,defective,diagnostic_anchor,diagnostic_anchor,1,fault_post_onset,14173
+Defected 7.xlsx,defective,diagnostic_anchor,diagnostic_anchor,1,normal,480
+Defected 7.xlsx,defective,diagnostic_anchor,diagnostic_anchor,1,pre_fault,30
+Healthy 1.xlsx,healthy,diagnostic_anchor,diagnostic_anchor,0,normal,19620
+Healthy 2.xlsx,healthy,diagnostic_anchor,diagnostic_anchor,0,normal,11599
+Healthy 3.xlsx,healthy,diagnostic_anchor,diagnostic_anchor,0,normal,11723
+Healthy 4.xlsx,healthy,diagnostic_anchor,diagnostic_anchor,0,normal,18263
+Healthy 5.xlsx,healthy,diagnostic_anchor,diagnostic_anchor,0,normal,19127
+Healthy 6.xlsx,healthy,diagnostic_anchor,diagnostic_anchor,0,normal,19982
+Healthy 7.xlsx,healthy,diagnostic_anchor,diagnostic_anchor,0,normal,12463
+Healthy 8.xlsx,healthy,diagnostic_anchor,diagnostic_anchor,0,normal,9152
+Healthy 9.xlsx,healthy,diagnostic_anchor,diagnostic_anchor,0,normal,20462

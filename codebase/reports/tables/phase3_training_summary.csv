@@ -1,0 +1,8 @@
+metric,value
+training_rows,312501
+training_files,23
+feature_columns,128
+normal_rows,307277
+pre_fault_rows,420
+fault_post_onset_rows,4804
+selected_driver_columns,"time_index_pca, pca_fault_score, spe_ratio, t2_ratio, time_index_anomaly, iso_score, tas, ias"

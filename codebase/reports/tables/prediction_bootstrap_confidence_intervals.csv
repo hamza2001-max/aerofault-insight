@@ -1,0 +1,9 @@
+metric,estimate,ci_low,ci_high,bootstrap_iterations,unit
+row_recall,1.0,1.0,1.0,500,file_bootstrap
+row_precision,0.0024547765861071334,0.0012016202484811179,0.004963702932838869,500,file_bootstrap
+row_f1,0.004897530828207445,0.0024003561219281644,0.009878372558733473,500,file_bootstrap
+average_precision,0.9532646239147157,0.8747910869618367,1.0,500,file_bootstrap
+roc_auc,0.9994345421191767,0.9983275389669896,1.0,500,file_bootstrap
+positive_file_recall,1.0,1.0,1.0,500,file_bootstrap
+healthy_file_false_alarm,1.0,1.0,1.0,500,file_bootstrap
+median_detection_delay_rows,-544.0,-2469.3624999999997,-470.0,500,file_bootstrap

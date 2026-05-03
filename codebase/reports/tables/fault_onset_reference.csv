@@ -1,0 +1,15 @@
+onset_position,onset_sequence_index,method,confidence,pre_onset_median,post_onset_median,file_name,group,rows,prefault_window_rows,prefault_start_position
+1939,1939,sustained_threshold_crossing,low,1.501918911933899,0.7197118997573853,Defect15(01).xlsx,defective,12431,350,1589
+1698,1698,sustained_threshold_crossing,low,1.6252636909484863,1.3488874435424805,Defect15(02).xlsx,defective,4902,350,1348
+15639,15639,sustained_threshold_crossing,medium,0.08062252402305603,2.001061201095581,Defect15(03).xlsx,defective,15689,350,15289
+1312,1312,sustained_threshold_crossing,low,1.9060255289077759,0.2988683581352234,Defect15(04).xlsx,defective,13123,350,962
+1435,1435,sustained_threshold_crossing,low,1.6034268140792847,0.7091450095176697,Defect16(01).xlsx,defective,9690,350,1085
+1587,1587,sustained_threshold_crossing,low,1.1773432493209839,0.23221753537654877,Defect16(02).xlsx,defective,14537,350,1237
+14661,14661,sustained_threshold_crossing,medium,0.011066709645092487,1.9446580410003662,Defect16(03).xlsx,defective,14683,350,14311
+1939,1939,sustained_threshold_crossing,low,1.501918911933899,0.7197118997573853,Defected 1.xlsx,defective,12431,350,1589
+1698,1698,sustained_threshold_crossing,low,1.6252636909484863,1.3488874435424805,Defected 2.xlsx,defective,4902,350,1348
+15639,15639,sustained_threshold_crossing,medium,0.08062252402305603,2.001061201095581,Defected 3.xlsx,defective,15689,350,15289
+1312,1312,sustained_threshold_crossing,low,1.9060255289077759,0.2988683581352234,Defected 4.xlsx,defective,13123,350,962
+1435,1435,sustained_threshold_crossing,low,1.6034268140792847,0.7091450095176697,Defected 5.xlsx,defective,9690,350,1085
+1587,1587,sustained_threshold_crossing,low,1.1773432493209839,0.23221753537654877,Defected 6.xlsx,defective,14537,350,1237
+14661,14661,sustained_threshold_crossing,medium,0.011066709645092487,1.9446580410003662,Defected 7.xlsx,defective,14683,350,14311

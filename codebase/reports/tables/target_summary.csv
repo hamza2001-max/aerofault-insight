@@ -1,0 +1,5 @@
+group,target_label,files,rows
+defective,fault_post_onset,14,93568
+defective,normal,14,71642
+defective,pre_fault,14,4900
+healthy,normal,22,354039

@@ -1,0 +1,11 @@
+artifact,path
+flight_rows_standardized,/home/hamza/Documents/research/aero-res/aircraft_fault_localization/data/processed/flight_rows_standardized.parquet
+anomaly_model_scores,/home/hamza/Documents/research/aero-res/aircraft_fault_localization/data/processed/anomaly_model_scores.parquet
+anomaly_threshold_summary,/home/hamza/Documents/research/aero-res/aircraft_fault_localization/data/processed/anomaly_threshold_summary.csv
+anomaly_model_file_summary,/home/hamza/Documents/research/aero-res/aircraft_fault_localization/reports/tables/anomaly_model_file_summary.csv
+anomaly_detection_summary,/home/hamza/Documents/research/aero-res/aircraft_fault_localization/reports/tables/anomaly_detection_summary.csv
+anomaly_reliability_flags,/home/hamza/Documents/research/aero-res/aircraft_fault_localization/reports/tables/anomaly_reliability_flags.csv
+anomaly_score_distributions,/home/hamza/Documents/research/aero-res/aircraft_fault_localization/reports/figures/anomaly_score_distributions.png
+file_level_anomaly_rates,/home/hamza/Documents/research/aero-res/aircraft_fault_localization/reports/figures/file_level_anomaly_rates.png
+pca_explained_variance,/home/hamza/Documents/research/aero-res/aircraft_fault_localization/reports/figures/pca_explained_variance.png
+anomaly_top_feature_drift,/home/hamza/Documents/research/aero-res/aircraft_fault_localization/reports/figures/anomaly_top_feature_drift.png

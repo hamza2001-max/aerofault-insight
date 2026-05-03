@@ -1,0 +1,13 @@
+metric,value
+selected_strategy,oversample_30
+selected_threshold,0.0122776179980504
+threshold_source,out_of_fold_development_scores
+training_rows,171095
+training_files,23
+validation_groups,17
+feature_columns,82
+positive_rows,420
+negative_rows,170675
+positive_rows_after_resampling,73147
+negative_rows_after_resampling,170675
+leakage_guard,removed target/onset/review/future/remaining features

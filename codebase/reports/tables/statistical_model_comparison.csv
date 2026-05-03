@@ -1,0 +1,3 @@
+test,candidate,baseline,statistic,p_value,paired_folds,error,paired_rows,best_only_correct,baseline_only_correct
+wilcoxon_fold_average_precision,hist_gradient_boosting,random_forest,1.0,0.125,5.0,,,,
+mcnemar_correctness_disagreement_exact_binomial,hist_gradient_boosting,random_forest,2.0,4.684716620737716e-75,,,82342.0,261.0,2.0

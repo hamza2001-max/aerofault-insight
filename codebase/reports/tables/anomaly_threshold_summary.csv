@@ -1,0 +1,8 @@
+metric,value
+threshold_990,17.26478385925293
+threshold_995_selected,94.00352478027344
+threshold_999,95.41558837890625
+pca_components,9.0
+features_used,120.0
+healthy_train_files,6.0
+healthy_calibration_files,3.0

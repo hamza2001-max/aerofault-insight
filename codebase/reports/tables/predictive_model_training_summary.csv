@@ -1,0 +1,11 @@
+metric,value
+model_family,hist_gradient_boosting
+training_rows,171095
+training_files,23
+validation_groups,17
+feature_columns,82
+positive_rows,420
+negative_rows,170675
+selected_threshold,0.6860432710845183
+threshold_source,out_of_fold_development_scores
+leakage_guard,removed target/onset/review/future/remaining features

@@ -1,0 +1,9 @@
+metric,value
+top_feature,time_since_start
+top_feature_importance,0.0
+top_feature_family,time
+selected_files_for_trend_view,6
+defective_files_available,14
+mean_max_prediction_score_on_selected_files,0.9999999598276054
+possible_leakage_features_in_importance_table,0
+interpretation_status,exploratory until confirmed on an independent external test set

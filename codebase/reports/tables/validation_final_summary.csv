@@ -1,0 +1,2 @@
+total_rows,healthy_rows,defective_rows,best_model,best_f1,best_roc_auc,file_level_accuracy,top_features
+312501,142391,170110,PCA SPE (95%),0.908225118892147,0.9800860432769956,0.6521739130434783,"['2ffy1', '2ffy2', '2ffy3', '2ffy4', '2fhsw1']"

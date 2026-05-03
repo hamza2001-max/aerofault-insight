@@ -1,0 +1,17 @@
+metric,value,level
+roc_auc,0.9765087054685923,row
+average_precision,0.6029077661723605,row
+precision,0.43478260869565216,row
+recall,0.5,row
+f1,0.46511627906976744,row
+balanced_accuracy,0.7462879324354753,row
+selected_threshold,0.6339769954882505,row
+evaluated_rows,309933.0,row
+evaluated_files,23.0,row
+file_roc_auc,0.7857142857142857,file
+file_average_precision,0.8995416348357523,file
+file_precision,0.7692307692307693,file
+file_recall,0.7142857142857143,file
+file_f1,0.7407407407407407,file
+healthy_file_false_alarm_rate,0.3333333333333333,file
+prefault_file_detection_rate,0.7142857142857143,file

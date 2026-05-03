@@ -1,0 +1,2 @@
+flag,severity,detail
+provisional_onset_labels,medium,Onsets are inferred from anomaly behavior and should be reviewed manually.

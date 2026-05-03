@@ -1,0 +1,52 @@
+file_name,group,phase2_label,rows
+Defect15(01).xlsx,defective,fault_post_onset,105
+Defect15(01).xlsx,defective,normal,12296
+Defect15(01).xlsx,defective,pre_fault,30
+Defect15(02).xlsx,defective,fault_post_onset,1666
+Defect15(02).xlsx,defective,normal,3206
+Defect15(02).xlsx,defective,pre_fault,30
+Defect15(03).xlsx,defective,fault_post_onset,104
+Defect15(03).xlsx,defective,normal,15555
+Defect15(03).xlsx,defective,pre_fault,30
+Defect15(04).xlsx,defective,fault_post_onset,79
+Defect15(04).xlsx,defective,normal,13014
+Defect15(04).xlsx,defective,pre_fault,30
+Defect16(01).xlsx,defective,fault_post_onset,98
+Defect16(01).xlsx,defective,normal,9562
+Defect16(01).xlsx,defective,pre_fault,30
+Defect16(02).xlsx,defective,fault_post_onset,260
+Defect16(02).xlsx,defective,normal,14247
+Defect16(02).xlsx,defective,pre_fault,30
+Defect16(03).xlsx,defective,fault_post_onset,90
+Defect16(03).xlsx,defective,normal,14563
+Defect16(03).xlsx,defective,pre_fault,30
+Defected 1.xlsx,defective,fault_post_onset,105
+Defected 1.xlsx,defective,normal,12296
+Defected 1.xlsx,defective,pre_fault,30
+Defected 2.xlsx,defective,fault_post_onset,1666
+Defected 2.xlsx,defective,normal,3206
+Defected 2.xlsx,defective,pre_fault,30
+Defected 3.xlsx,defective,fault_post_onset,104
+Defected 3.xlsx,defective,normal,15555
+Defected 3.xlsx,defective,pre_fault,30
+Defected 4.xlsx,defective,fault_post_onset,79
+Defected 4.xlsx,defective,normal,13014
+Defected 4.xlsx,defective,pre_fault,30
+Defected 5.xlsx,defective,fault_post_onset,98
+Defected 5.xlsx,defective,normal,9562
+Defected 5.xlsx,defective,pre_fault,30
+Defected 6.xlsx,defective,fault_post_onset,260
+Defected 6.xlsx,defective,normal,14247
+Defected 6.xlsx,defective,pre_fault,30
+Defected 7.xlsx,defective,fault_post_onset,90
+Defected 7.xlsx,defective,normal,14563
+Defected 7.xlsx,defective,pre_fault,30
+Healthy 1.xlsx,healthy,normal,19620
+Healthy 2.xlsx,healthy,normal,11599
+Healthy 3.xlsx,healthy,normal,11723
+Healthy 4.xlsx,healthy,normal,18263
+Healthy 5.xlsx,healthy,normal,19127
+Healthy 6.xlsx,healthy,normal,19982
+Healthy 7.xlsx,healthy,normal,12463
+Healthy 8.xlsx,healthy,normal,9152
+Healthy 9.xlsx,healthy,normal,20462

@@ -1,0 +1,7 @@
+figure,path
+prediction_precision_recall_curve,/home/hamza/Documents/research/aero-res/aircraft_fault_localization/reports/figures/prediction_precision_recall_curve.png
+prediction_roc_curve,/home/hamza/Documents/research/aero-res/aircraft_fault_localization/reports/figures/prediction_roc_curve.png
+prediction_file_max_scores,/home/hamza/Documents/research/aero-res/aircraft_fault_localization/reports/figures/prediction_file_max_scores.png
+model_top_feature_importance,/home/hamza/Documents/research/aero-res/aircraft_fault_localization/reports/figures/model_top_feature_importance.png
+model_prediction_trends,/home/hamza/Documents/research/aero-res/aircraft_fault_localization/reports/figures/model_prediction_trends.png
+prediction_confusion_matrix,/home/hamza/Documents/research/aero-res/aircraft_fault_localization/reports/figures/prediction_confusion_matrix.png

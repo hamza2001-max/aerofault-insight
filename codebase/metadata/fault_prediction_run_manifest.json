@@ -1,0 +1,59 @@
+{
+  "rows": 430581,
+  "files": 36,
+  "model": "hist_gradient_boosting",
+  "selected_threshold": 0.6,
+  "metrics": [
+    {
+      "metric": "model",
+      "value": "hist_gradient_boosting"
+    },
+    {
+      "metric": "rows",
+      "value": 430581
+    },
+    {
+      "metric": "files",
+      "value": 36
+    },
+    {
+      "metric": "roc_auc",
+      "value": 0.9999999693168723
+    },
+    {
+      "metric": "average_precision",
+      "value": 0.9999973274119679
+    },
+    {
+      "metric": "precision",
+      "value": 0.9979633401221996
+    },
+    {
+      "metric": "recall",
+      "value": 1.0
+    },
+    {
+      "metric": "f1",
+      "value": 0.9989806320081549
+    },
+    {
+      "metric": "balanced_accuracy",
+      "value": 0.9999882541151708
+    },
+    {
+      "metric": "selected_threshold",
+      "value": 0.6
+    },
+    {
+      "metric": "healthy_file_false_alarm_rate",
+      "value": 0.0
+    },
+    {
+      "metric": "defective_file_detection_rate",
+      "value": 1.0
+    }
+  ],
+  "report_path": "/home/hamza/Documents/research/aero-res/aircraft_fault_localization/reports/aero_fault_analysis_enhanced_report.pdf",
+  "prediction_scores": "/home/hamza/Documents/research/aero-res/aircraft_fault_localization/data/processed/fault_prediction_scores.parquet",
+  "model_path": "/home/hamza/Documents/research/aero-res/aircraft_fault_localization/models/fault_prediction_model.pkl"
+}

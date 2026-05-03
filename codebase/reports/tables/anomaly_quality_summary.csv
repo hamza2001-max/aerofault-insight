@@ -1,0 +1,12 @@
+metric,value
+selected_threshold,1.911752700805664
+file_rate_threshold,0.03
+healthy_file_false_alarm_rate,0.09090909090909091
+defective_file_detection_rate,1.0
+healthy_row_false_alarm_rate,0.015003996734823
+defective_row_detection_rate,0.06364117335841514
+row_roc_auc,0.6633997987568214
+objective,0.7087589627096393
+w_pca,0.0
+w_iso,1.0
+w_maha,0.0

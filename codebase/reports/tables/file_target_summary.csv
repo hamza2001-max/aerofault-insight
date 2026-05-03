@@ -1,0 +1,65 @@
+file_name,group,target_label,rows
+00100726.xlsx,healthy,normal,12463
+00101206.xlsx,healthy,normal,19981
+002.xlsx,healthy,normal,19119
+003.xlsx,healthy,normal,19176
+01007.xlsx,healthy,normal,19620
+01008.xlsx,healthy,normal,11599
+01009.xlsx,healthy,normal,11723
+01010.xlsx,healthy,normal,18263
+01011.xlsx,healthy,normal,19127
+01012.xlsx,healthy,normal,19982
+0410may.xlsx,healthy,normal,9152
+1138.xlsx,healthy,normal,10981
+Defect15(01).xlsx,defective,fault_post_onset,10492
+Defect15(01).xlsx,defective,normal,1589
+Defect15(01).xlsx,defective,pre_fault,350
+Defect15(02).xlsx,defective,fault_post_onset,3204
+Defect15(02).xlsx,defective,normal,1348
+Defect15(02).xlsx,defective,pre_fault,350
+Defect15(03).xlsx,defective,fault_post_onset,50
+Defect15(03).xlsx,defective,normal,15289
+Defect15(03).xlsx,defective,pre_fault,350
+Defect15(04).xlsx,defective,fault_post_onset,11811
+Defect15(04).xlsx,defective,normal,962
+Defect15(04).xlsx,defective,pre_fault,350
+Defect16(01).xlsx,defective,fault_post_onset,8255
+Defect16(01).xlsx,defective,normal,1085
+Defect16(01).xlsx,defective,pre_fault,350
+Defect16(02).xlsx,defective,fault_post_onset,12950
+Defect16(02).xlsx,defective,normal,1237
+Defect16(02).xlsx,defective,pre_fault,350
+Defect16(03).xlsx,defective,fault_post_onset,22
+Defect16(03).xlsx,defective,normal,14311
+Defect16(03).xlsx,defective,pre_fault,350
+Defected 1.xlsx,defective,fault_post_onset,10492
+Defected 1.xlsx,defective,normal,1589
+Defected 1.xlsx,defective,pre_fault,350
+Defected 2.xlsx,defective,fault_post_onset,3204
+Defected 2.xlsx,defective,normal,1348
+Defected 2.xlsx,defective,pre_fault,350
+Defected 3.xlsx,defective,fault_post_onset,50
+Defected 3.xlsx,defective,normal,15289
+Defected 3.xlsx,defective,pre_fault,350
+Defected 4.xlsx,defective,fault_post_onset,11811
+Defected 4.xlsx,defective,normal,962
+Defected 4.xlsx,defective,pre_fault,350
+Defected 5.xlsx,defective,fault_post_onset,8255
+Defected 5.xlsx,defective,normal,1085
+Defected 5.xlsx,defective,pre_fault,350
+Defected 6.xlsx,defective,fault_post_onset,12950
+Defected 6.xlsx,defective,normal,1237
+Defected 6.xlsx,defective,pre_fault,350
+Defected 7.xlsx,defective,fault_post_onset,22
+Defected 7.xlsx,defective,normal,14311
+Defected 7.xlsx,defective,pre_fault,350
+Healthy 1.xlsx,healthy,normal,19620
+Healthy 2.xlsx,healthy,normal,11599
+Healthy 3.xlsx,healthy,normal,11723
+Healthy 4.xlsx,healthy,normal,18263
+Healthy 5.xlsx,healthy,normal,19127
+Healthy 6.xlsx,healthy,normal,19982
+Healthy 7.xlsx,healthy,normal,12463
+Healthy 8.xlsx,healthy,normal,9152
+Healthy 9.xlsx,healthy,normal,20462
+SatFiles.xlsx,healthy,normal,20462

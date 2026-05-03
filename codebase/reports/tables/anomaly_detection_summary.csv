@@ -1,0 +1,12 @@
+metric,value,section
+threshold_990,17.26478385925293,thresholds
+threshold_995_selected,94.00352478027344,thresholds
+threshold_999,95.41558837890625,thresholds
+pca_components,9.0,thresholds
+features_used,120.0,thresholds
+healthy_train_files,6.0,thresholds
+healthy_calibration_files,3.0,thresholds
+healthy_file_false_alarm_rate,0.1111111111111111,file_level
+defective_file_detection_rate,0.14285714285714285,file_level
+healthy_row_anomaly_rate,0.0014326748179309087,file_level
+defective_row_anomaly_rate,3.5271295044383044e-05,file_level

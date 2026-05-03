@@ -1,0 +1,4 @@
+group,phase2_relabel_state,rows
+defective,candidate_pre_fault,108958
+defective,fault_post_anchor,61152
+healthy,normal,142391

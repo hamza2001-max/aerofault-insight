@@ -1,0 +1,5 @@
+group,target_state,rows
+defective,fault_post_onset,141406
+defective,normal,28284
+defective,pre_fault,420
+healthy,normal,142391

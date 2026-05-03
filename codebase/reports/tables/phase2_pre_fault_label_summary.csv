@@ -1,0 +1,5 @@
+group,phase2_state,rows
+defective,fault_post_onset,4804
+defective,normal,164886
+defective,pre_fault,420
+healthy,normal,142391

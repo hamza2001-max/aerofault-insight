@@ -1,0 +1,13 @@
+\babel@toc {english}{}\relax 
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Planned analytical flow from data loading and healthy-baseline generation to anomaly screening, file-level aggregation, and analyst review.}}{25}{figure.3.1}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Row-level and file-level distribution of healthy and defective samples after preprocessing.}}{26}{figure.3.2}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Explained variance across principal components for the healthy-reference model.}}{28}{figure.3.3}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Share of rows in each file with at least one large standardized deviation.}}{32}{figure.4.1}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Comparison of key performance metrics across the principal screening models.}}{33}{figure.4.2}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Mean ensemble score by file, showing overlap between borderline healthy files and clearly defective files.}}{35}{figure.4.3}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Illustrative temporal abnormality profile for top defective files, motivating the next engine-focused phase.}}{39}{figure.5.1}%

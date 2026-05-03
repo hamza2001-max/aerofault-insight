@@ -1,0 +1,24 @@
+file_name,group,rows,target_file,max_prediction_score,mean_prediction_score,predicted_positive_rows,predicted_file
+Defect15(01).xlsx,defective,12322,1,0.25322306,0.006828872,0,0
+Defect15(02).xlsx,defective,4792,1,0.9425826,0.15875702,462,1
+Defect15(03).xlsx,defective,15584,1,0.50234264,0.016225459,0,0
+Defect15(04).xlsx,defective,13038,1,0.98406655,0.041631315,308,1
+Defect16(01).xlsx,defective,9587,1,0.98666066,0.045354232,365,1
+Defect16(02).xlsx,defective,13861,1,0.97248787,0.068659075,946,1
+Defect16(03).xlsx,defective,14587,1,0.9963405,0.031250626,302,1
+Defected 1.xlsx,defective,12322,1,0.25322306,0.006828872,0,0
+Defected 2.xlsx,defective,4792,1,0.9425826,0.15875702,462,1
+Defected 3.xlsx,defective,15584,1,0.50234264,0.016225459,0,0
+Defected 4.xlsx,defective,13038,1,0.992034,0.040723618,285,1
+Defected 5.xlsx,defective,9587,1,0.9803422,0.061060622,453,1
+Defected 6.xlsx,defective,13861,1,0.9976232,0.042051673,331,1
+Defected 7.xlsx,defective,14587,1,0.6886833,0.011923455,26,1
+Healthy 1.xlsx,healthy,19620,0,0.47938138,0.012179964,0,0
+Healthy 2.xlsx,healthy,11599,0,0.38428083,0.019654727,0,0
+Healthy 3.xlsx,healthy,11723,0,0.6758599,0.05580384,11,1
+Healthy 4.xlsx,healthy,18263,0,0.6798308,0.025258103,28,1
+Healthy 5.xlsx,healthy,19127,0,0.3788551,0.006758415,0,0
+Healthy 6.xlsx,healthy,19982,0,0.54688144,0.027023809,0,0
+Healthy 7.xlsx,healthy,12463,0,0.24709916,0.0027519166,0,0
+Healthy 8.xlsx,healthy,9152,0,0.9036679,0.03535045,46,1
+Healthy 9.xlsx,healthy,20462,0,0.6099347,0.04634828,0,0

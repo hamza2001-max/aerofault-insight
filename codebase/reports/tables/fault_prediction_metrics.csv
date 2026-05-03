@@ -1,0 +1,13 @@
+metric,value
+model,hist_gradient_boosting
+rows,430581
+files,36
+roc_auc,0.9999999693168723
+average_precision,0.9999973274119679
+precision,0.9979633401221996
+recall,1.0
+f1,0.9989806320081549
+balanced_accuracy,0.9999882541151708
+selected_threshold,0.6
+healthy_file_false_alarm_rate,0.0
+defective_file_detection_rate,1.0

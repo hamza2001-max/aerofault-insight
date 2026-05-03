@@ -1,0 +1,5 @@
+artifact,path
+minimal_pdf_report,/home/hamza/Documents/research/aero-res/aircraft_fault_localization/reports/aero_fault_analysis_minimal_report.pdf
+prediction_performance_summary,/home/hamza/Documents/research/aero-res/aircraft_fault_localization/reports/tables/prediction_performance_summary.csv
+prediction_file_level_summary,/home/hamza/Documents/research/aero-res/aircraft_fault_localization/reports/tables/prediction_file_level_summary.csv
+prediction_scientific_reliability_flags,/home/hamza/Documents/research/aero-res/aircraft_fault_localization/reports/tables/prediction_scientific_reliability_flags.csv

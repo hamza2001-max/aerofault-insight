@@ -1,0 +1,24 @@
+group,file_name,rows,time_source,min_time,max_time,rows_rank_desc
+defective,Defect15(01).xlsx,12431,sequence_index,0.0,12430.0,11.0
+defective,Defect15(02).xlsx,4902,sequence_index,0.0,4901.0,16.0
+defective,Defect15(03).xlsx,15689,sequence_index,0.0,15688.0,6.0
+defective,Defect15(04).xlsx,13123,sequence_index,0.0,13122.0,9.0
+defective,Defect16(01).xlsx,9690,sequence_index,0.0,9689.0,14.0
+defective,Defect16(02).xlsx,14537,sequence_index,0.0,14536.0,8.0
+defective,Defect16(03).xlsx,14683,sequence_index,0.0,14682.0,7.0
+defective,Defected 1.xlsx,12431,sequence_index,0.0,12430.0,11.0
+defective,Defected 2.xlsx,4902,sequence_index,0.0,4901.0,16.0
+defective,Defected 3.xlsx,15689,sequence_index,0.0,15688.0,6.0
+defective,Defected 4.xlsx,13123,sequence_index,0.0,13122.0,9.0
+defective,Defected 5.xlsx,9690,sequence_index,0.0,9689.0,14.0
+defective,Defected 6.xlsx,14537,sequence_index,0.0,14536.0,8.0
+defective,Defected 7.xlsx,14683,sequence_index,0.0,14682.0,7.0
+healthy,Healthy 1.xlsx,19620,sequence_index,0.0,19619.0,3.0
+healthy,Healthy 2.xlsx,11599,sequence_index,0.0,11598.0,13.0
+healthy,Healthy 3.xlsx,11723,sequence_index,0.0,11722.0,12.0
+healthy,Healthy 4.xlsx,18263,sequence_index,0.0,18262.0,5.0
+healthy,Healthy 5.xlsx,19127,sequence_index,0.0,19126.0,4.0
+healthy,Healthy 6.xlsx,19982,sequence_index,0.0,19981.0,2.0
+healthy,Healthy 7.xlsx,12463,sequence_index,0.0,12462.0,10.0
+healthy,Healthy 8.xlsx,9152,sequence_index,0.0,9151.0,15.0
+healthy,Healthy 9.xlsx,20462,sequence_index,0.0,20461.0,1.0
