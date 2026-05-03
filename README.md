@@ -17,6 +17,18 @@ The project uses healthy aircraft data as a reference, applies anomaly detection
 - Reports row-level and file-level performance
 - Generates plots, metrics, and reliability notes
 
+## Project Files
+
+```text
+.
+├── 01_consolidated_anomaly_detection.ipynb
+├── 02_consolidated_fault_prediction_and_report.ipynb
+├── aero_fault_analysis_enhanced_report.pdf
+├── data/
+├── outputs/
+└── README.md
+````
+
 ## Requirements
 
 The project is built using Python and common data science libraries.
@@ -31,21 +43,23 @@ seaborn
 openpyxl
 ```
 
+Install the required packages using:
+
+```bash
+pip install pandas numpy scikit-learn matplotlib seaborn openpyxl
+```
+
 ## How to Run
 
 1. Place the raw Excel flight data files in the data folder.
 
 2. Run the anomaly detection notebook:
 
-```text
 01_consolidated_anomaly_detection.ipynb
-```
 
 3. Run the fault prediction and report generation notebook:
 
-```text
 02_consolidated_fault_prediction_and_report.ipynb
-```
 
 4. Review the generated metrics, plots, and final report.
 
@@ -65,7 +79,3 @@ The project generates:
 ## Author
 
 Hamza Ali
-
-```
-```
-
