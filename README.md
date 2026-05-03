@@ -1,4 +1,3 @@
-````markdown
 # AeroFault Insight
 
 AeroFault Insight is a data-driven aircraft fault analysis project focused on detecting abnormal behavior and predicting possible pre-fault patterns from flight data.
@@ -27,7 +26,7 @@ The project uses healthy aircraft data as a reference, applies anomaly detection
 ├── data/
 ├── outputs/
 └── README.md
-````
+```
 
 ## Requirements
 
@@ -55,11 +54,15 @@ pip install pandas numpy scikit-learn matplotlib seaborn openpyxl
 
 2. Run the anomaly detection notebook:
 
+```text
 01_consolidated_anomaly_detection.ipynb
+```
 
 3. Run the fault prediction and report generation notebook:
 
+```text
 02_consolidated_fault_prediction_and_report.ipynb
+```
 
 4. Review the generated metrics, plots, and final report.
 
@@ -67,14 +70,14 @@ pip install pandas numpy scikit-learn matplotlib seaborn openpyxl
 
 The project generates:
 
-* Anomaly scores
-* File-level anomaly rates
-* Fault prediction metrics
-* Model comparison results
-* Confusion matrix
-* ROC and precision-recall curves
-* Prediction timelines
-* PDF report
+- Anomaly scores
+- File-level anomaly rates
+- Fault prediction metrics
+- Model comparison results
+- Confusion matrix
+- ROC and precision-recall curves
+- Prediction timelines
+- PDF report
 
 ## Author
 
